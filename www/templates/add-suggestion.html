@@ -1,56 +1,60 @@
 <ion-view view-title="Ajouter une suggestion">
-  <ion-content>
-  	<form ng-submit="createSuggestion(suggestion)">
-	    <div class="list">
-		  
-		  <label class="item item-input item-select">
-		    <div class="input-label">
-		      Hôtel
-		    </div>
-		    <select ng-model="suggestion.hotel">
-		      <option value="1">Best Western Hôtel Du Parc Chantilly</option>
-		      <option value="2">Best Western Hotel Les Beaux Arts</option>
-		      <option value="3">Hotel Plaza Elysees</option>
-		      <option value="4">Best Western Hotel Paris Louvre Opera</option>
-		    </select>
-		  </label>
-		  
-		  <label class="item item-input item-floating-label">
-		    <span class="input-label">Titre</span>
-		    <input type="text" placeholder="Titre" ng-model="suggestion.title">
-		  </label>
-		  
-		  <label class="item item-input item-select">
-		    <div class="input-label">
-		      Thématique
-		    </div>
-		    <select ng-model="suggestion.thematic">
-		      <option>Hygiène</option>
-		      <option>Loisirs</option>
-		      <option>Cuisine</option>
-		      <option>Autre</option>
-		    </select>
-		  </label>
-		  
-		  <label class="item item-input item-floating-label">
-		    <span class="input-label">Description</span>
-		    <textarea type="text" placeholder="Description" ng-model="suggestion.description"></textarea>
-		  </label>
-		  
-		  <label class="item item-input item-floating-label">
-		    <span class="input-label">Justification</span>
-		    <textarea type="text" placeholder="Justification" ng-model="suggestion.justification"></textarea>
-		  </label>
-		  
-		  <div class="row">
-		  	<div class="col text-center">
-			  <button type="submit" class="button button-positive">
-		  	  	Ajouter
-			  </button>
-		  	</div>
-		  </div>
-
-		</div>
-    </form>
-  </ion-content>
+    <ion-content>
+        <div class="row">
+            <div class="col text-center">
+                <button class="ion-close-round button button-clear button-positive">
+                    Annuler la proposition
+                </button>
+            </div>
+        </div>
+        <form ng-submit="createSuggestion(suggestion)">
+            <div class="card padding bg-idea">
+                <div class="list text-center color-blue">
+                    <h1>Vous souhaitez améliorer votre expérience Best Western ?</h1>
+                    <h2 class="color-grey">Soumettez-nous votre idée</h2>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Hôtel
+                        </div>
+                        <select ng-model="suggestion.hotel" class="color-clear">
+                            <option class="color-blue" value="1">Best Western Hôtel Du Parc Chantilly</option>
+                            <option class="color-blue" value="2">Best Western Hotel Les Beaux Arts</option>
+                            <option class="color-blue" value="3">Hotel Plaza Elysees</option>
+                            <option class="color-blue" value="4">Best Western Hotel Paris Louvre Opera</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Titre</span>
+                        <input type="text" placeholder="Titre" ng-model="suggestion.title">
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Thématique
+                        </div>
+                        <select ng-model="suggestion.thematic">
+                            <option>Hygiène</option>
+                            <option>Loisirs</option>
+                            <option>Cuisine</option>
+                            <option>Autre</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Description</span>
+                        <textarea type="text" placeholder="Description" ng-model="suggestion.description"></textarea>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Justification</span>
+                        <textarea type="text" placeholder="Justification" ng-model="suggestion.justification"></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button type="submit" class="button button-energized">
+                        Valider la proposition
+                    </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>

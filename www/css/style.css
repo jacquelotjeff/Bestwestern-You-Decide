@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+
+/* Main css */
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.1em; }
+.card.padding { padding:5%; }
+button.button { border-radius: 30px }
+
+/*Colors*/
+.color-blue { color: #063AC6; }
+.color-grey { color: #636363; }
+
+/*Add contribution page*/
+.bg-idea { background-image: url("/img/idea.png"); background-repeat: no-repeat; background-size: contain; background-position: 50% 90%; }
+.bg-idea * { background: transparent !important; }
