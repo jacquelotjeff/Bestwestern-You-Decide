@@ -41,7 +41,15 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('LoginCtrl', function($scope) {
+  $scope.data = {};
+
+  $scope.login = function() {
+    console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
+  }
+})
+
+.controller('SuggestionsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -52,5 +60,5 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('SuggestionCtrl', function($scope, $stateParams) {
 });
