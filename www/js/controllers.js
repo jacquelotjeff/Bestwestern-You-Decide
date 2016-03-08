@@ -42,13 +42,16 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
+
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Assitant personnel', id: 1, theme: 'android-bicycle', date: '13 mars 2016', votes: '82' },
+    { title: 'Jacuzzi privatif', id: 2, theme: 'pizza', date: '26 février 2016', votes: '82' },
+    { title: 'Vélos en libre-service', id: 3, theme: 'android-contacts', date: '20 avril 2016', votes: '82' },
+    { title: 'Navette aéroport', id: 4, theme: 'ios-paw', date: '15 décembre 2015', votes: '82' },
+    { title: 'Assitant personnel', id: 1, theme: 'android-bicycle', date: '13 mars 2016', votes: '82' },
+    { title: 'Jacuzzi privatif', id: 2, theme: 'pizza', date: '26 février 2016', votes: '82' },
+    { title: 'Vélos en libre-service', id: 3, theme: 'android-contacts', date: '20 avril 2016', votes: '82' },
+    { title: 'Navette aéroport', id: 4, theme: 'ios-paw', date: '15 décembre 2015', votes: '82' },
   ];
 })
 

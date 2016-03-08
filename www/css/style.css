@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.pictos{font-size:30px;border-radius:30px;border-right:2px solid #0620B7;color:#EFB000;padding:15px 0;}
+a.item-content{padding:16px !important;}
+.votes{color: #0620B7 !important;font-size:20px !important;}
+.star{color: #EFB000 !important;}
+ion-item.card{border-top-left-radius: 55px;position:relative;}
+.detail{width:30%;height:30px;position:absolute;bottom:0;right:0;background-color:#0620B7;color:#ffffff !important;padding:5px 0 0 12px; }
