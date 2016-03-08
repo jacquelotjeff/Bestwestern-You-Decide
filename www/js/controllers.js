@@ -49,7 +49,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('SuggestionsCtrl', function($scope) {
+.controller('SuggestionsCtrl', function($scope, $stateParams, $state) {
+  
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -58,7 +59,39 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
+  //Go to the addSuggestion page
+  $scope.addSuggestion = function() {
+    $state.go("app.suggestions_add");
+  }
+
+
+})
+
+.controller('SuggestionAddCtrl', function($scope, $stateParams) {
+    
+    $scope.suggestion = {};
+
+    $scope.createSuggestion = function(suggestion) {
+
+
+    //TODO get connected user and store into suggestion
+    suggestion.user = "default";
+    //TODO store suggestion object
+    /*
+    $scope.tasks.push({
+    });
+      title: task.title
+    $scope.taskModal.hide();
+    task.title = "";
+    */
+  };
+
+
+  
 })
 
 .controller('SuggestionCtrl', function($scope, $stateParams) {
+
+
 });

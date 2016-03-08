@@ -51,6 +51,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.suggestions_add', {
+      url: '/suggestions/add',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/add-suggestion.html',
+          controller: 'SuggestionAddCtrl'
+        }
+      }
+    })
+
   .state('app.suggestions_detail', {
     url: '/suggestions/:suggestionId',
     views: {
