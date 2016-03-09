@@ -64,3 +64,4 @@ angular.module('starter.controllers', [])
 
     .controller('SuggestionCtrl', function ($scope, $stateParams) {
     });
+>>>>>>> f0682cbd61f7754629990ce8fa3af7d4b0383941
