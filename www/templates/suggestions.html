@@ -1,16 +1,33 @@
-<ion-view view-title="Suggestions">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/suggestions/{{suggestion.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
-    	<div class="row">
-		  	<div class="col text-center">
-			  <button ng-click="addSuggestion()" class="button button-positive">
-		  	  	Proposer une suggestion
-			  </button>
-		  	</div>
-		</div>
-  </ion-content>
+<ion-view class="fond" view-title="<img class='title-image' src='./img/logo_login.png' />">
+    <div class="content">
+        <div class="col button-suggestion">
+            <button class="button button-full button-positive button-suggestion-add" ng-click="addSuggestion()">
+                Je propose mon idée
+            </button>
+        </div>
+        <ion-content class="content-list-suggestion" delegate-handle="mainScroll">
+            <ion-refresher
+                    pulling-text="Relâchez pour actualiser"
+                    on-refresh="doRefresh()">
+            </ion-refresher>
+            <ion-list class="suggestion-list">
+                <ion-item class="card" ng-repeat="suggestion in suggestions" href="#/app/suggestion/{{suggestion.id}}">
+                    <div class="row">
+                        <div class="col" style="position:relative;">
+                            <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
+                            <p class="theme-name">{{suggestion.themeName}}</p>
+                        </div>
+                        <div class="col col-60">
+                            <h2 class="title">{{suggestion.title}}</h2>
+                            <p>{{suggestion.date}}</p>
+                            <p class="votes">{{suggestion.votes}} <i class="icon star ion-ios-star-outline"></i></p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <span><i class="icon ion-ios-plus-empty"></i> de détails</span>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
 </ion-view>

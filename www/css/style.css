@@ -1,5 +1,4 @@
 /* Empty. Add your own CSS if you like */
-
 /* Main css */
 h1 { font-size: 1.5em; }
 h2 { font-size: 1.1em; }
@@ -13,3 +12,42 @@ button.button { border-radius: 30px }
 /*Add contribution page*/
 .bg-idea { background-image: url("/img/idea.png"); background-repeat: no-repeat; background-size: contain; background-position: 50% 90%; }
 .bg-idea * { background: transparent !important; }
+
+
+.pictos{font-size:30px;border-radius:30px;border-right:2px solid #0620B7;color:#efb102;padding:15px 0;}
+a.item-content{padding:10px !important;}
+.votes{color: #0620B7 !important;font-size:20px !important;}
+.star{color: #efb102 !important;}
+ion-item.card{border-top-left-radius: 55px;position:relative;}
+ion-item:first-child { border-top: 0px; }
+.detail{width:30%;height:30px;position:absolute;bottom:0;right:0;background-color:#0620B7;color:#ffffff !important;padding:5px 0 0 12px; }
+.fond{background-image:url('../img/fond.jpg');}
+.button-suggestion{z-index:999;position:relative;top:50px;}
+.button-suggestion .button-suggestion-add{border-radius:30px;}
+.content-list-suggestion{position:relative;top: 0px;}
+.theme-name{font-size:12px !important;color:#aaaaaa !important;position:absolute;top:50%;right:0;text-transform:uppercase;transform: translateY(-50%) rotate(-90deg);}
+.name{color:#fff !important;font-size:20px !important;padding-left:10px;}
+.menu-icon{font-size:25px;color:#efb102;margin:15px;}
+.login label{position: relative;padding-left:0;background-color: transparent;border-width:0px;}
+.login label input{font-weight:bold;text-align:center;color:#0620B7 !important;height:40px;margin-left:44px;margin-right:44px;margin-bottom:20px;padding-right:0 !important;background-color: transparent !important;border-top:1px solid #000;border-bottom:1px solid #000;}
+.login label input:focus{border-bottom:1px solid #efb102;border-top:1px solid #efb102}
+.login label span{background-color:#FCEFCC;text-transform: uppercase;font-size: 11px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);width:auto !important;padding:0 10px !important;}
+.border-tiny-up{width: 1px;height:7px;background-color:#000;position: absolute;}
+.border-tiny-left{left:12.6%;}
+.border-tiny-right{right:12.6%}
+.border-tiny-down{width: 1px;height:7px;background-color:#000;position: absolute;bottom: 35%;}
+.login label input:focus ~ .border-tiny-up{background-color:#efb102 !important;}
+.login label input:focus ~ .border-tiny-down{background-color:#efb102 !important;}
+.suggestion-list .list{padding-top: 35px !important;}
+.logo-login{margin: 0 auto; width: 250px; display: block; padding-top: 30px;}
+.card.login{background-image: url('../img/bg-login.svg');background-position: center bottom;background-repeat: no-repeat;}
+.form-login {}
+.desc-login{font-size:16px;padding:31px;color:#333;}
+.button-connect{border-radius:30px;width: 80%;margin: 0 auto;}
+input:-webkit-autofill{ background: transparent; }
+
+.bar { height: 65px; background: transparent !important; border-bottom: none; }
+.bar .title { height: 65px; }
+.bar .title .title-image { height: 55px; width: 165px; margin-top:10px; }
+
+.content { margin-top: 40px; position: relative;}
