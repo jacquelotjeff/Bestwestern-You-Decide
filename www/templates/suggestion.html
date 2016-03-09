@@ -1,5 +1,32 @@
 <ion-view view-title="Suggestion">
   <ion-content>
-    <h1>Suggestion</h1>
+    <ion-list class="list card">
+
+      <div class="item item-avatar">
+        <img src="/img/ionic.png">
+
+        <h2>{{idee_selected.title}}</h2>
+
+        <p>Catégorie : {{idee_selected.category}} </p>
+
+        <p>Proposée le {{idee_selected.date}} </p>
+      </div>
+
+      <ion-item>
+        <h2> {{idee_selected.like}} personnes ont voté POUR</h2>
+      </ion-item>
+
+      <div class="item item-body">
+        <h3>Description</h3>
+        <p>
+          {{idee_selected.description}}
+        </p>
+      </div>
+
+    </ion-list>
+
+    <button class="button button-block button-energized" ng-click="">
+      Je vote pour cette idée
+    </button>
   </ion-content>
 </ion-view>
