@@ -41,7 +41,8 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.services
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/login.html',
-                        controller: 'LoginCtrl'
+                        controller: 'LoginCtrl',
+                        disableBack: true
                     }
                 },
                 data: {
@@ -79,19 +80,15 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.services
         $urlRouterProvider.otherwise('/app/suggestions');
     })
 
-    // Used to check if the user is logged
+    // Used to check if the user is loggedf
+    // SA MARCHE :D faut juste virer la page de login du menu de gauche :D
     .run(function ($rootScope, $location, $localstorage) {
-
+        $localstorage.removeItem('currentUser');
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-            if ($localstorage.get('currentUser') === 'undefined' && toState.data.requireLogin !== 'undefined') {
-                var requireLogin = toState.data.requireLogin;
-
-                if (requireLogin && typeof $localstorage.get('currentUser') === 'undefined') {
-                    event.preventDefault();
-                    console.log('not authorized');
-                    // Redirect to login page
-                    $location.path( "/app/login" );
-                }
+            console.log(typeof $localstorage.get('currentUser') === 'undefined');
+            if (typeof $localstorage.get('currentUser') === 'undefined' && toState.data.requireLogin == true) {
+                // Redirect to login page
+                $location.path( "/app/login" );
             }
         });
 
