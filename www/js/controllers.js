@@ -36,15 +36,17 @@ angular.module('starter.controllers', [])
             });
         }
     })
-    .controller('SuggestionsCtrl', function ($scope) {
-        $scope.playlists = [
-            {title: 'Reggae', id: 1},
-            {title: 'Chill', id: 2},
-            {title: 'Dubstep', id: 3},
-            {title: 'Indie', id: 4},
-            {title: 'Rap', id: 5},
-            {title: 'Cowbell', id: 6}
-        ];
+    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
+        $http.get("http://demo6872153.mockable.io/suggestions")
+            .success(function (data) {
+                $scope.suggestions = data.suggestions;
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Erreur de connexion',
+                    template: 'L\'API semble ne pas répondre.'
+                });
+            });
     })
 
     .controller('SuggestionCtrl', function ($scope, $stateParams) {
