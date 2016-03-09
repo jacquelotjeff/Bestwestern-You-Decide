@@ -1,35 +1,51 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+</ion-side-menu-content>
 
-  <ion-side-menu side="left">
+<ion-side-menu side="left">
     <ion-header-bar style="background-color:#03135E;"class="bar-stable">
 
     </ion-header-bar>
     <ion-content>
-      <div style="width:100%;height:100px;background:#073CC6;">
-        <div class="col">
-
+        <div style="width:100%;height:110px;padding:8px;background:#073CC6;">
+            <div class="row">
+                <div class="col col-33" style="position: relative;overflow: hidden;height:85px;border-radius: 50%;border: 2px solid #395CD0">
+                    <img src="../img/profil.jpeg" style="display: inline;margin: -17px -7px;height: 165%;width: auto;">
+                </div>
+                <div class="col col-67" style="padding-top: 10px;">
+                    <p class="name">Julien</p>
+                    <p class="name">Random</p>
+                </div>
+            </div>
         </div>
-        <div class="col col-67">
-
+        <div style="height:50px;padding:15px;">
+            Membre <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">diamond-select</span>
         </div>
-      </div>
-      <ion-list>
-        <ion-item menu-close href="#/app/suggestions">
-          Suggestions
-        </ion-item>
-      </ion-list>
+        <ion-list>
+            <ion-item menu-close href="#/app/compte">
+                <p><span class="menu-icon"><i class="icon ion-person"></i></span> Mon compte</p>
+            </ion-item>
+            <ion-item menu-close href="#/app/suggestions">
+                <p><span class="menu-icon" style="margin:18px !important;"><i class="icon ion-lightbulb"></i></span> Idées déjà traitées</p>
+            </ion-item>
+            <!-- accessible qu'à l'admin -->
+            <ion-item menu-close href="#/app/parametres">
+                <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
+            </ion-item>
+        </ion-list>
     </ion-content>
-  </ion-side-menu>
+    <div class="bar bar-footer" style="height: 75px;">
+    <img src="../img/logo.jpg" style="width: 100%;">
+    </div>
+    </ion-side-menu>
 </ion-side-menus>

@@ -1,12 +1,14 @@
 /* Empty. Add your own CSS if you like */
-.pictos{font-size:30px;border-radius:30px;border-right:2px solid #0620B7;color:#EFB000;padding:15px 0;}
-a.item-content{padding:16px !important;}
+.pictos{font-size:30px;border-radius:30px;border-right:2px solid #0620B7;color:#efb102;padding:15px 0;}
+a.item-content{padding:10px !important;}
 .votes{color: #0620B7 !important;font-size:20px !important;}
-.star{color: #EFB000 !important;}
+.star{color: #efb102 !important;}
 ion-item.card{border-top-left-radius: 55px;position:relative;}
 .detail{width:30%;height:30px;position:absolute;bottom:0;right:0;background-color:#0620B7;color:#ffffff !important;padding:5px 0 0 12px; }
 .fond{background-image:url('../img/fond.jpg');}
 .button-suggestion{z-index:999;position:absolute;top:40px;}
 .button-suggestion .button-suggestion-add{border-radius:30px;}
 .content-list-suggestion{position:relative;top: 95px;}
-.theme-name{color:#cccbbb !important;position:absolute;top:50%;left:-25px;text-transform:uppercase;transform: translateY(-50%) rotate(-90deg);}
+.theme-name{font-size:11px !important;color:#aaaaaa !important;position:absolute;top:50%;right:0;text-transform:uppercase;transform: translateY(-50%) rotate(-90deg);}
+.name{color:#fff !important;font-size:20px !important;padding-left:10px;}
+.menu-icon{font-size:25px;color:#efb102;margin:15px;}
