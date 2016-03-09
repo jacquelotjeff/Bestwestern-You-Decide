@@ -1,24 +1,25 @@
-<ion-view view-title="Playlists">
-    <div class="col" style="z-index:999;position:absolute;top:40px;">
-        <button style="border-radius:30px;" class="button button-full button-positive">
+<ion-view class="fond" view-title="Best Western - YOU DECIDE">
+    <div class="col button-suggestion">
+        <button class="button button-full button-positive button-suggestion-add">
             Je propose mon idée
         </button>
     </div>
-    <ion-content style="position:relative;top: 95px;" delegate-handle="mainScroll">
+    <ion-content class="content-list-suggestion" delegate-handle="mainScroll">
         <ion-refresher
                 pulling-text="Relâchez pour actualiser"
                 on-refresh="doRefresh()">
         </ion-refresher>
         <ion-list>
-            <ion-item class="card" ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+            <ion-item class="card" ng-repeat="suggestion in suggestions" href="#/app/suggestion/{{suggestion.id}}">
                 <div class="row">
                     <div class="col">
-                        <i class="icon col col-50 pictos ion-{{playlist.theme}}"></i>
+                        <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
                     </div>
-                    <div class="col col-60">
-                        <h2 class="title">{{playlist.title}}</h2>
-                        <p>{{playlist.date}}</p>
-                        <p class="votes">{{playlist.votes}} <i class="icon star ion-ios-star-outline"></i></p>
+                    <div class="col col-60" style="position:relative;">
+                    	<p class="theme-name">{{suggestion.theme-name}}</p>
+                        <h2 class="title">{{suggestion.title}}</h2>
+                        <p>{{suggestion.date}}</p>
+                        <p class="votes">{{suggestion.votes}} <i class="icon star ion-ios-star-outline"></i></p>
                     </div>
                 </div>
                 <div class="detail">

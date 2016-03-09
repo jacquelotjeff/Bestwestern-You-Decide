@@ -50,9 +50,9 @@ angular.module('starter.controllers', [])
     })
 
     .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
-        $http.get("http://demo6872153.mockable.io/suggestions22")
+        $http.get("http://demo6872153.mockable.io/suggestions")
             .success(function (data) {
-                $scope.playlists = data.suggestions;
+                $scope.suggestions = data.suggestions;
             })
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({
@@ -64,4 +64,3 @@ angular.module('starter.controllers', [])
 
     .controller('SuggestionCtrl', function ($scope, $stateParams) {
     });
->>>>>>> f0682cbd61f7754629990ce8fa3af7d4b0383941

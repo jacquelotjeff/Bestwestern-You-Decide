@@ -5,3 +5,8 @@ a.item-content{padding:16px !important;}
 .star{color: #EFB000 !important;}
 ion-item.card{border-top-left-radius: 55px;position:relative;}
 .detail{width:30%;height:30px;position:absolute;bottom:0;right:0;background-color:#0620B7;color:#ffffff !important;padding:5px 0 0 12px; }
+.fond{background-image:url('../img/fond.jpg');}
+.button-suggestion{z-index:999;position:absolute;top:40px;}
+.button-suggestion .button-suggestion-add{border-radius:30px;}
+.content-list-suggestion{position:relative;top: 95px;}
+.theme-name{color:#cccbbb !important;position:absolute;top:50%;left:-25px;text-transform:uppercase;transform: translateY(-50%) rotate(-90deg);}
