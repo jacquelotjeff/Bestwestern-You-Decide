@@ -1,32 +1,36 @@
 <ion-view view-title="Suggestion">
-  <ion-content>
-    <ion-list class="list card">
+  <ion-content >
+    <ion-list>
+      <ion-item class="list card">
+        <div class="row item">
+          <div class="col">
+            <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
+          </div>
 
-      <div class="item item-avatar">
-        <img src="/img/ionic.png">
+          <div class="col col-60">
+            <div class="textTitle">{{suggestion.title}}</div>
 
-        <h2>{{idee_selected.title}}</h2>
+            <p>Catégorie : <span class="textColor">{{suggestion.themeName}}</span></p>
 
-        <p>Catégorie : {{idee_selected.category}} </p>
+            <p>Proposée le <span class="textColor">{{suggestion.date}}</span> </p>
+          </div>
+        </div>
 
-        <p>Proposée le {{idee_selected.date}} </p>
-      </div>
+        <ion-item class="item item-body">
+          <div class="textTitle"> {{suggestion.votes}} personnes ont voté <span class="textColor">POUR</span></div>
+        </ion-item>
 
-      <ion-item>
-        <h2> {{idee_selected.like}} personnes ont voté POUR</h2>
+        <div class="item item-body">
+          <div class="textTitle">Description</div>
+          <p>
+            {{suggestion.description}}
+          </p>
+        </div>
       </ion-item>
 
-      <div class="item item-body">
-        <h3>Description</h3>
-        <p>
-          {{idee_selected.description}}
-        </p>
-      </div>
-
+      <button class="button button-block button-energized" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 200px; margin-left:25%;">
+        Je vote pour cette idée
+      </button>
     </ion-list>
-
-    <button class="button button-block button-energized" ng-click="">
-      Je vote pour cette idée
-    </button>
   </ion-content>
 </ion-view>

@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
   .state('app.suggestions_detail', {
-    url: '/suggestions/:suggestionId',
+    url: '/suggestion/:suggestionId',
     views: {
       'menuContent': {
         templateUrl: 'templates/suggestion.html',
