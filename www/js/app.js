@@ -83,7 +83,7 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.services
     .run(function ($rootScope, $location, $localstorage) {
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-            if ($localstorage.get('currentUser') === 'undefined' || toState.data.requireLogin !== 'undefined') {
+            if ($localstorage.get('currentUser') === 'undefined' && toState.data.requireLogin !== 'undefined') {
                 var requireLogin = toState.data.requireLogin;
 
                 if (requireLogin && typeof $localstorage.get('currentUser') === 'undefined') {
