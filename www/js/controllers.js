@@ -115,6 +115,25 @@ angular.module('starter.controllers', [])
         }
     })
 
+    .controller('SuggestionCtrl', function ($scope, $http, $stateParams) {
+        $http.get("http://demo6872153.mockable.io/suggestion")
+            .success(function (data) {
+                $scope.suggestion = data.suggestion;
+                console.log($scope.suggestion);
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Erreur de connexion',
+                    template: 'L\'API semble ne pas répondre.'
+                });
+            });
+    })
 
-    .controller('SuggestionCtrl', function ($scope, $stateParams) {
-    });
+    .controller('PopupCtrl', function ($scope, $ionicPopup) {
+        $scope.showAlert = function () {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Confirmation',
+                template: 'Votre vote a été pris en compte.'
+            });
+        };
+    })

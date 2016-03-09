@@ -6,12 +6,12 @@
             </button>
         </div>
         <ion-content class="content-list-suggestion" delegate-handle="mainScroll">
-            <ion-refresher
-                    pulling-text="Relâchez pour actualiser"
-                    on-refresh="doRefresh()">
-            </ion-refresher>
+            <!--<ion-refresher-->
+                    <!--pulling-text="Relâchez pour actualiser"-->
+                    <!--on-refresh="doRefresh()">-->
+            <!--</ion-refresher>-->
             <ion-list class="suggestion-list">
-                <ion-item class="card" ng-repeat="suggestion in suggestions" href="#/app/suggestion/{{suggestion.id}}">
+                <ion-item class="card" ng-repeat="suggestion in suggestions" href="#/app/suggestions/{{suggestion.id}}">
                     <div class="row">
                         <div class="col" style="position:relative;">
                             <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
