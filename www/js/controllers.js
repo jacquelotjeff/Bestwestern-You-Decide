@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('SuggestionAddCtrl', function($scope, $stateParams) {
+.controller('SuggestionAddCtrl', function($scope, $stateParams, $state) {
     
     $scope.suggestion = {};
 
@@ -86,6 +86,10 @@ angular.module('starter.controllers', [])
     task.title = "";
     */
   };
+
+  $scope.backToHome = function() {
+    $state.go("app.suggestions");
+  }
 
 
   

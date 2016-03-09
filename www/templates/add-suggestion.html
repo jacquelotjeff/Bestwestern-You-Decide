@@ -2,16 +2,18 @@
     <ion-content class="bg-background">
         <div class="row">
             <div class="col text-center">
-                <button class="no-padding-top no-padding-bottom ion-close-round button button-clear button-positive">
+                <button ng-click="backToHome()" class="bold color-blue no-padding-top no-padding-bottom ion-close-round button button-clear button-positive">
                     Annuler la proposition
                 </button>
             </div>
         </div>
         <form ng-submit="createSuggestion(suggestion)">
             <div class="card padding no-margin-top bg-idea">
-                <div class="list text-center color-blue">
+                <div class="text-center">
                     <h1>Vous souhaitez améliorer votre expérience Best Western ?</h1>
                     <h2 class="color-grey">Soumettez-nous votre idée</h2>
+                </div>
+                <div class="list color-blue">
                     <label class="item item-input item-select">
                         <div class="input-label">
                             Hôtel
@@ -23,13 +25,13 @@
                             <option class="color-blue" value="4">Best Western Hotel Paris Louvre Opera</option>
                         </select>
                     </label>
-                    <label class="item item-input item-floating-label">
+                    <label class="item item-input">
                         <span class="input-label">Titre</span>
-                        <input type="text" placeholder="Titre" ng-model="suggestion.title">
+                        <input type="text" ng-model="suggestion.title">
                     </label>
                     <label class="item item-input item-select">
                         <div class="input-label">
-                            Thématique
+                            Catégorie
                         </div>
                         <select ng-model="suggestion.thematic">
                             <option>Hygiène</option>
@@ -38,13 +40,13 @@
                             <option>Autre</option>
                         </select>
                     </label>
-                    <label class="item item-input item-floating-label">
+                    <label class="item item-input item-stacked-label">
                         <span class="input-label">Description</span>
-                        <textarea type="text" placeholder="Description" ng-model="suggestion.description"></textarea>
+                        <textarea rows="5" type="text" ng-model="suggestion.description"></textarea>
                     </label>
-                    <label class="item item-input item-floating-label">
+                    <label class="item item-input item-stacked-label">
                         <span class="input-label">Justification</span>
-                        <textarea type="text" placeholder="Justification" ng-model="suggestion.justification"></textarea>
+                        <textarea rows="5" type="text" ng-model="suggestion.justification"></textarea>
                     </label>
                 </div>
             </div>
