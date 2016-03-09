@@ -18,7 +18,7 @@ ion-item:first-child { border-top: 0px; }
 .login label span{background-color:#FCEFCC;text-transform: uppercase;font-size: 11px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);width:auto !important;padding:0 10px !important;}
 .border-tiny-up{width: 1px;height:7px;background-color:#000;position: absolute;}
 .border-tiny-down{width: 1px;height:7px;background-color:#efb102;position: absolute;bottom: 35%;}
-
+.suggestion-list .list{padding-top: 35px !important;}
 .form-login {}
 input:-webkit-autofill{ background: transparent; }
 

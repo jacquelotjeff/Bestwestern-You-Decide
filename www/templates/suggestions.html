@@ -11,7 +11,7 @@
                     pulling-text="Relâchez pour actualiser"
                     on-refresh="doRefresh()">
             </ion-refresher>
-            <ion-list>
+            <ion-list class="suggestion-list">
                 <ion-item class="card" ng-repeat="suggestion in suggestions" href="#/app/suggestion/{{suggestion.id}}">
                     <div class="row">
                         <div class="col" style="position:relative;">
