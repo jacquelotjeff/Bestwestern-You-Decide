@@ -12,3 +12,11 @@ ion-item.card{border-top-left-radius: 55px;position:relative;}
 .theme-name{font-size:11px !important;color:#aaaaaa !important;position:absolute;top:50%;right:0;text-transform:uppercase;transform: translateY(-50%) rotate(-90deg);}
 .name{color:#fff !important;font-size:20px !important;padding-left:10px;}
 .menu-icon{font-size:25px;color:#efb102;margin:15px;}
+.login label{position: relative;padding-left:0;background-color: transparent;border-width:0px;}
+.login label input{text-align:center;color:#0620B7 !important;height:40px;margin-left:44px;margin-right:44px;margin-bottom:20px;padding-right:0 !important;background-color: transparent !important;border-top:1px solid #000;border-bottom:1px solid #efb102;}
+.login label span{background-color:#FCEFCC;text-transform: uppercase;font-size: 11px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);width:auto !important;padding:0 10px !important;}
+.border-tiny-up{width: 1px;height:7px;background-color:#000;position: absolute;}
+.border-tiny-down{width: 1px;height:7px;background-color:#efb102;position: absolute;bottom: 35%;}
+
+.form-login {}
+input:-webkit-autofill{ background: transparent; }
