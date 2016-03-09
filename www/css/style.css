@@ -1,15 +1,29 @@
 /* Empty. Add your own CSS if you like */
 
+/*Utils*/
+.no-padding { padding: 0px; }
+.no-padding-top { padding-top: 0px; }
+.no-padding-bottom { padding-bottom: 0px; }
+.no-padding-left { padding-left: 0px; }
+.no-padding-right { padding-right: 0px; }
+
+.no-margin { margin: 0px !important; }
+.no-margin-top { margin-top: 0px; }
+.no-margin-bottom { margin-bottom: 0px; }
+.no-margin-left { margin-left: 0px; }
+.no-margin-right { margin-right: 0px; }
+
 /* Main css */
 h1 { font-size: 1.5em; }
 h2 { font-size: 1.1em; }
 .card.padding { padding:5%; }
 button.button { border-radius: 30px }
+.bg-background { background: url("/img/background-appli.jpg") }
 
 /*Colors*/
 .color-blue { color: #063AC6; }
 .color-grey { color: #636363; }
 
 /*Add contribution page*/
-.bg-idea { background-image: url("/img/idea.png"); background-repeat: no-repeat; background-size: contain; background-position: 50% 90%; }
+.bg-idea { background: url("/img/bg-idee.svg") no-repeat 50% 90%; -webkit-background-size: 100%; -moz-background-size: 100%; background-size: 100%;}
 .bg-idea * { background: transparent !important; }

@@ -1,14 +1,14 @@
 <ion-view view-title="Ajouter une suggestion">
-    <ion-content>
+    <ion-content class="bg-background">
         <div class="row">
             <div class="col text-center">
-                <button class="ion-close-round button button-clear button-positive">
+                <button class="no-padding-top no-padding-bottom ion-close-round button button-clear button-positive">
                     Annuler la proposition
                 </button>
             </div>
         </div>
         <form ng-submit="createSuggestion(suggestion)">
-            <div class="card padding bg-idea">
+            <div class="card padding no-margin-top bg-idea">
                 <div class="list text-center color-blue">
                     <h1>Vous souhaitez améliorer votre expérience Best Western ?</h1>
                     <h2 class="color-grey">Soumettez-nous votre idée</h2>
@@ -16,7 +16,7 @@
                         <div class="input-label">
                             Hôtel
                         </div>
-                        <select ng-model="suggestion.hotel" class="color-clear">
+                        <select ng-model="suggestion.hotel">
                             <option class="color-blue" value="1">Best Western Hôtel Du Parc Chantilly</option>
                             <option class="color-blue" value="2">Best Western Hotel Les Beaux Arts</option>
                             <option class="color-blue" value="3">Hotel Plaza Elysees</option>
