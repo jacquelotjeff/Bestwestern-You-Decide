@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({
                     title: 'Erreur de connexion',
-                    template: 'L\'API ne répond pas.'
+                    template: 'L\'API semble ne pas répondre.'
                 });
             });
     })
