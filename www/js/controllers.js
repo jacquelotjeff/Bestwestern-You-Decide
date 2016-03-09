@@ -10,12 +10,23 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('LoginCtrl', function ($scope, LoginService, $ionicPopup, $state) {
+    .controller('LoginCtrl', function ($localstorage, $scope, LoginService, $ionicPopup, $state, $http) {
         $scope.data = {};
 
+        // Get all users
+        $http.get("http://demo6872153.mockable.io/users")
+            .success(function (data) {
+                $scope.users = data.users;
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Erreur de connexion',
+                    template: 'L\'API semble ne pas répondre.'
+                });
+            });
+
         $scope.login = function() {
-            LoginService.loginUser($scope.data.email, $scope.data.password).success(function(data) {
-                console.log('success');
+            LoginService.loginUser($scope.users, $scope.data.email, $scope.data.password).success(function(data) {
                 $state.go('app.suggestions');
             }).error(function(data) {
                 var alertPopup = $ionicPopup.alert({

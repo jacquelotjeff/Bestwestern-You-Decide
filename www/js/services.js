@@ -1,17 +1,37 @@
 angular.module('starter.services', ['ng'])
 
-    .service('LoginService', function ($q) {
+    .service('LoginService', function ($localstorage, $q) {
         return {
-            // TODO CHECK IN API AUTHORIZATION
-            loginUser: function (email, pw) {
+            loginUser: function (users, email, pw) {
                 var deferred = $q.defer();
                 var promise = deferred.promise;
+                var found = false;
+                var user;
 
-                if (email == 'toto@toto.fr' && pw == 'toto') {
+                angular.forEach(users, function(value, key)
+                {
+                    // If user is found
+                    if (value.email === email && value.password == pw)
+                    {
+                        user = {
+                            lastname: value.lastname,
+                            firstname: value.firstname,
+                            email: value.email,
+                            photo: value.photo
+                        };
+                        found = true;
+                    }
+                });
+
+                if (found === true) {
+                    $localstorage.setObject('currentUser', user);
+
+                    console.log($localstorage.getObject('currentUser'));
                     deferred.resolve('Welcome ' + email + '!');
                 } else {
                     deferred.reject('Wrong credentials.');
                 }
+
                 promise.success = function (fn) {
                     promise.then(fn);
                     return promise;
@@ -24,7 +44,3 @@ angular.module('starter.services', ['ng'])
             }
         }
     })
-
-    .factory('CacheService', function ($cacheFactory) {
-        return $cacheFactory('CacheService');
-    });
