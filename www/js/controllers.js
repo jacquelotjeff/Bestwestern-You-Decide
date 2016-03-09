@@ -50,7 +50,7 @@ angular.module('starter.controllers', [])
     })
 
     .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
-        $http.get("http://demo6872153.mockable.io/suggestions22")
+        $http.get("http://demo6872153.mockable.io/suggestions")
             .success(function (data) {
                 $scope.playlists = data.suggestions;
             })
