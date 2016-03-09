@@ -7,16 +7,14 @@
             <div class="list">
                 <label class="item item-input">
                     <span class="input-label">Adresse email</span>
-                    <input type="email" ng-model="data.email">
+                    <input type="email" ng-model="user.email">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Mot de passe</span>
-                    <input type="password" ng-model="data.password">
-                </label>
-                <label class="item">
-                    <button class="button button-block button-positive" type="submit">Valider</button>
+                    <input type="password" ng-model="user.password">
                 </label>
             </div>
         </form>
+        <a class="button button-block button-positive" ng-click="signIn(user)">Valider</a>
     </ion-content>
 </ion-view>

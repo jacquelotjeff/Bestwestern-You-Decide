@@ -4,7 +4,7 @@
             <ion-nav-back-button>
             </ion-nav-back-button>
 
-            <ion-nav-buttons side="left">
+            <ion-nav-buttons side="right">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
                 </button>
             </ion-nav-buttons>
@@ -20,28 +20,35 @@
         <div style="width:100%;height:110px;padding:8px;background:#073CC6;">
             <div class="row">
                 <div class="col col-33" style="position: relative;overflow: hidden;height:85px;border-radius: 50%;border: 2px solid #395CD0">
-                    <img src="./img/profil.jpeg" style="display: inline;margin: -17px -7px;height: 165%;width: auto;">
+                    <img src="{{ user.photo }}" style="display: inline;margin: -17px -7px;height: 165%;width: auto;">
                 </div>
                 <div class="col col-67" style="padding-top: 10px;">
-                    <p class="name">Julien</p>
-                    <p class="name">Random</p>
+                    <p class="name">{{ user.firstname }}</p>
+                    <p class="name">{{ user.lastname }}</p>
                 </div>
             </div>
         </div>
         <div style="height:50px;padding:15px;">
-            Membre <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">diamond-select</span>
+            Membre <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">{{ user.status }}</span>
         </div>
         <ion-list>
-            <ion-item menu-close href="#/app/compte">
-                <p><span class="menu-icon"><i class="icon ion-person"></i></span> Mon compte</p>
-            </ion-item>
-            <ion-item menu-close href="#/app/suggestions">
-                <p><span class="menu-icon" style="margin:18px !important;"><i class="icon ion-lightbulb"></i></span> Idées déjà traitées</p>
-            </ion-item>
-            <!-- accessible qu'à l'admin -->
-            <ion-item menu-close href="#/app/parametres">
-                <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
-            </ion-item>
+            <div ng-hide="!user">
+                <ion-item menu-close href="#/app/compte">
+                    <p><span class="menu-icon"><i class="icon ion-person"></i></span> Mon compte</p>
+                </ion-item>
+                <ion-item menu-close href="#/app/suggestions">
+                    <p><span class="menu-icon" style="margin:18px !important;"><i class="icon ion-lightbulb"></i></span> Idées déjà traitées</p>
+                </ion-item>
+                <!-- accessible qu'à l'admin -->
+                <ion-item menu-close href="#/app/parametres">
+                    <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
+                </ion-item>
+            </div>
+            <div ng-hide="user">
+                <ion-item menu-close href="#/app/login">
+                    <p><span class="menu-icon"><i class="icon ion-locked"></i></span> Connexion</p>
+                </ion-item>
+            </div>
         </ion-list>
     </ion-content>
     <div class="bar bar-footer" style="height: 75px;">

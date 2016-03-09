@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.services', 'starter.controllers'])
+var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controllers'])
 
     .run(function ($ionicPlatform) {
 
@@ -80,16 +80,12 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.services
         $urlRouterProvider.otherwise('/app/suggestions');
     })
 
-    // Used to check if the user is loggedf
-    // SA MARCHE :D faut juste virer la page de login du menu de gauche :D
-    .run(function ($rootScope, $location, $localstorage) {
-        $localstorage.removeItem('currentUser');
+    // Used to check if the user is logged
+    .run(function ($rootScope, $location) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-            console.log(typeof $localstorage.get('currentUser') === 'undefined');
-            if (typeof $localstorage.get('currentUser') === 'undefined' && toState.data.requireLogin == true) {
+            if (typeof $rootScope.user === 'undefined' && toState.data.requireLogin == true) {
                 // Redirect to login page
                 $location.path( "/app/login" );
             }
         });
-
     });

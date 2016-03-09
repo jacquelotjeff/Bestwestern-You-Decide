@@ -10,33 +10,23 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('LoginCtrl', function ($localstorage, $scope, LoginService, $ionicPopup, $state, $http) {
-        $scope.data = {};
+    .controller('LoginCtrl', function ($scope, userProvider, $location) {
+        if (typeof user != 'undefined') {
+            $location.path('app/suggestions')
+        }
 
-        // Get all users
-        $http.get("http://demo6872153.mockable.io/users")
-            .success(function (data) {
-                $scope.users = data.users;
-            })
-            .error(function (data) {
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Erreur de connexion',
-                    template: 'L\'API semble ne pas répondre.'
-                });
-            });
+        $scope.user = {};
 
-        $scope.login = function() {
-            LoginService.loginUser($scope.users, $scope.data.email, $scope.data.password).success(function(data) {
-                $state.go('app.suggestions');
-            }).error(function(data) {
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Connexion refusé ',
-                    template: 'Merci de vérifier vos identifiants !'
-                });
-            });
+        $scope.signIn = function(user) {
+            userProvider.signIn(user);
         }
     })
-    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
+
+    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate) {
+        // Hide Back button
+        $scope.options = $scope.options || {};
+        $scope.options.hideBackButton = true;
+
         $http.get("http://demo6872153.mockable.io/suggestions")
             .success(function (data) {
                 $scope.suggestions = data.suggestions;
