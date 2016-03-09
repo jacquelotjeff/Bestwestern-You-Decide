@@ -3,10 +3,10 @@
         <!--<h1 class="title">Connectez-vous</h1>-->
     <!--</ion-header-bar>-->
     <ion-content>
-        <img src="./img/logo_login.png" alt="" style="margin: 0 auto; width: 250px; display: block; padding-top: 30px;">
+        <img src="./img/logo_login.png" alt="" class="logo-login">
         <form ng-submit="login()" class="form-login">
-            <div class="card login"style="background-image: url('./img/bg-login.svg');background-position: center bottom;background-repeat: no-repeat;">
-                <p style="font-size:16px;padding:31px;color:#333;">
+            <div class="card login">
+                <p class="desc-login">
                     Avec l’application YOU DECIDE, BestWestern vous laisse la parole. Soumettez-nous vos suggestions et vos meilleures idées pour améliorer votre expérience chez nous. <br/>
                     Soumises aux votes des autres clients, vos idées se concrétiseront dès que le seuil des 500 votes sera atteint. <br/>
                     N’hésitez pas à voter pour les idées qui vous intéressent !
@@ -14,23 +14,23 @@
                     <div class="list">
                         <label class="item item-input">
                             <span class="input-label">Email</span>
-                            <div class="border-tiny-up" style="left:12.6%"></div>
-                            <div class="border-tiny-up" style="right:12.6%"></div>
+                            <div class="border-tiny-up border-tiny-left"></div>
+                            <div class="border-tiny-up border-tiny-right"></div>
                             <input type="email" ng-model="user.email">
-                            <div class="border-tiny-down" style="left:12.6%"></div>
-                            <div class="border-tiny-down" style="right:12.6%"></div>
+                            <div class="border-tiny-down border-tiny-left"></div>
+                            <div class="border-tiny-down border-tiny-right"></div>
                         </label>
                         <label class="item item-input">
                             <span class="input-label">Mot de passe</span>
-                            <div class="border-tiny-up" style="left:12.6%"></div>
-                            <div class="border-tiny-up" style="right:12.6%"></div>
+                            <div class="border-tiny-up border-tiny-left"></div>
+                            <div class="border-tiny-up border-tiny-right"></div>
                             <input type="password" ng-model="user.password">
-                            <div class="border-tiny-down" style="left:12.6%"></div>
-                            <div class="border-tiny-down" style="right:12.6%"></div>
+                            <div class="border-tiny-down border-tiny-left"></div>
+                            <div class="border-tiny-down border-tiny-right"></div>
                         </label>
                     </div>
             </div>
         </form>
-        <a style="border-radius:30px;width: 80%;margin: 0 auto;" class="button button-block button-positive" ng-click="signIn(user)">Se connecter</a>
+        <a class="button-connect button button-block button-positive" ng-click="signIn(user)">Se connecter</a>
     </ion-content>
 </ion-view>
