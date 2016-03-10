@@ -185,12 +185,9 @@ ion-item:first-child {
 }
 
 .content-list-suggestion {
-    position: relative;
+    
     top: 0px;
-}
-
-.content-list-suggestion ion-scroll[direction=y] {
-  height: 100vh;
+    height: 95vh;
 }
 
 .theme-name {
