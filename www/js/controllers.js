@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
     })
 
     .controller('LoginCtrl', function ($scope, userProvider, $location, $ionicPopup) {
+        $scope.firstConnexion = true;
         if (typeof user !== 'undefined') {
             $location.path('app/suggestions')
         }

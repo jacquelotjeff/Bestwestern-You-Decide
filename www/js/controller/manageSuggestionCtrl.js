@@ -4,7 +4,7 @@ app
     // Administration des suggestions
     // Validation des suggestions
     .controller('ManageSuggestionsCtrl',function ($scope, $http, $ionicPopup, $state) {
-        $http.get("http://demo6872153.mockable.io/suggestions")
+        $http.get("http://demo6872153.mockable.io/suggestions-500")
             .success(function (data) {
                 $scope.suggestions = data.suggestions;
             })

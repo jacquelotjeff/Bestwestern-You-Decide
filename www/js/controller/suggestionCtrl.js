@@ -3,8 +3,10 @@
 app
 
 
-    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate) {
+    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
         // Hide Back button
+        // TODO Cacher le "bouton de retour" BACK si l'utilisateur arrive de la connexion
+
         $scope.options = $scope.options || {};
         $scope.options.hideBackButton = true;
 
