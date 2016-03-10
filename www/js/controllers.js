@@ -155,8 +155,7 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('SuggestionAValiderCtrl', function ($scope, $http, $stateParams) {
-        alert("textttt");
+    .controller('SuggestionAValiderCtrl', function ($scope, $http, $stateParams, $ionicPopup) {
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
@@ -168,4 +167,46 @@ angular.module('starter.controllers', [])
                     template: 'L\'API semble ne pas répondre.'
                 });
             });
-    })
+
+            $scope.validateSuggestion = function () {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Confirmation',
+                    template: 'Cette suggestion sera soumise aux votes des utilisateurs.',
+                    buttons: [
+                        { text: 'Annuler' },
+                        {
+                            text: '<b>Continuer</b>',
+                            type: 'button-positive',
+                        }
+                    ]
+                });
+            };
+
+            $scope.refuseSuggestion = function () {
+                
+                $scope.data = {};
+
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Cette suggestion ne sera pas soumises aux votes des utilisateurs.',
+                    subTitle: 'Veuillez saisir un motif de refus',
+                    template: '<textarea ng-model="data.motif"></textarea>',
+                    scope: $scope,
+                    buttons: [
+                        { text: 'Annuler' },
+                        {
+                            text: '<b>Continuer</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                if (!$scope.data.motif) {
+                                    //don't allow the user to close unless he enters motif
+                                    e.preventDefault();
+                                } else {
+                                    //TODO send e-mail with motif to the user who suggest
+                                }
+                            }
+                        }
+                    ]
+                });
+            };
+
+    });

@@ -106,7 +106,7 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 url: '/suggestions-a-valider/:suggestionId',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/suggestions-a-valider.html',
+                        templateUrl: 'templates/suggestion-a-valider.html',
                         controller: 'SuggestionAValiderCtrl'
                     }
                 },

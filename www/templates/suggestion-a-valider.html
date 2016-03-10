@@ -1,5 +1,5 @@
 <ion-view view-title="Suggestion">
-  <ion-content >
+  <ion-content class="fond">
     <ion-list>
       <ion-item class="list card">
         <div class="row item">
@@ -30,12 +30,10 @@
         </div>
       </ion-item>
 
-      <button class="button button-block button-energized" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 100px; margin-left:25%;">
-        Valider la suggestion
-      </button>
-      <button class="button button-block button-assertive" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 100px; margin-left:25%;">
-        Refuser la suggestion
-      </button>
+      <div class="text-center row">
+        <i style="font-size:6em;" class="col ion-checkmark-circled balanced" ng-controller="SuggestionAValiderCtrl" ng-click="validateSuggestion()"></i>
+        <i style="font-size:6em;" class="col ion-close-circled assertive" ng-controller="SuggestionAValiderCtrl" ng-click="refuseSuggestion()"></i>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
