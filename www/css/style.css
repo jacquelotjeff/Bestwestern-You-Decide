@@ -190,7 +190,7 @@ ion-item:first-child {
 }
 
 .content-list-suggestion ion-scroll[direction=y] {
-  height: 150vh;
+  height: 100vh;
 }
 
 .theme-name {
@@ -317,13 +317,15 @@ input:-webkit-autofill {
 }
 
 .bar {
-    height: 65px;
+    height: 75px;
     background: transparent !important;
     border-bottom: none;
+    z-index: 999;
+    position: relative;
 }
 
 .bar .title {
-    height: 65px;
+    height: 75px;
 }
 
 .bar .title .title-image {
