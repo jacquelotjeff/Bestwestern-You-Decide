@@ -1,74 +1,86 @@
-<ion-view ng-controller="SuggestionAddCtrl" view-title="Ajouter une suggestion">
-    <ion-content class="bg-background">
-        <div class="row">
-            <div class="col text-center">
-                <button ng-click="backToHome()" class="bold color-blue no-padding-top no-padding-bottom ion-close-round button button-clear button-positive">
-                    Annuler la proposition
-                </button>
-            </div>
-        </div>
-        <form name="addSuggestion" ng-submit="createSuggestion(suggestion)" novalidate>
-            <div class="card padding no-margin-top bg-idea bg-idea-white">
-                <div class="text-center">
-                    <h1>Vous souhaitez améliorer votre expérience Best Western ?</h1>
-                    <h2 class="color-grey">Soumettez-nous votre idée</h2>
-                </div>
-                <div class="list color-blue">
-                    
-                    <label class="item item-input item-select">
-                        <div class="input-label">
-                            Hôtel
-                        </div>
-                        <select name="hostel" ng-model="suggestion.hotel" ng-options="hotel.id as hotel.name for hotel in hostels" required>
-                        </select>
-                    </label>
-                    <div class="row">
-                        <span class="col assertive" ng-show="addSuggestion.hostel.$touched && addSuggestion.hostel.$invalid">Vous devez sélectionner un hôtel.</span>
-                    </div>
-                    
-                    <label class="item item-input">
-                        <span class="input-label">Titre</span>
-                        <input name="title" type="text" ng-model="suggestion.title" required>
-                    </label>
-                    <div class="row">
-                        <span class="col assertive" ng-show="addSuggestion.title.$touched && addSuggestion.title.$invalid">Vous devez saisir un titre.</span>
-                    </div>
-                    
-                    <label class="item item-input item-select">
-                        <div class="input-label">
-                            Catégorie
-                        </div>
-                        <select name="thematic" ng-model="suggestion.thematic" ng-options="thematic.id as thematic.name for thematic in thematics" required>
-                        </select>
-                    </label>
-                    <div class="row">
-                        <span class="col assertive" ng-show="addSuggestion.thematic.$touched && addSuggestion.thematic.$invalid">Vous devez sélectionner une catégorie.</span>
-                    </div>
-                    
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Description</span>
-                        <textarea name="description" required rows="5" type="text" ng-model="suggestion.description"></textarea>
-                    </label>
-                    <div class="row">
-                        <span class="col assertive" ng-show="addSuggestion.description.$touched && addSuggestion.description.$invalid">Vous devez saisir une description.</span>
-                    </div>
-                    
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Justification</span>
-                        <textarea name="justification" required rows="5" type="text" ng-model="suggestion.justification"></textarea>
-                    </label>
-                    <div class="row">
-                        <span class="col assertive" ng-show="addSuggestion.justification.$touched && addSuggestion.justification.$invalid">Vous devez saisir une justification.</span>
-                    </div>
-                </div>
-            </div>
+<ion-view class="fond" ng-controller="SuggestionAddCtrl" view-title="<img class='title-image' src='./img/logo_login.png' />">
+    <div class="content">
+        <ion-content class="content-list-suggestion">
             <div class="row">
                 <div class="col text-center">
-                    <button ng-disabled="addSuggestion.$invalid" type="submit" class="button button-energized">
-                        Valider la proposition
+                    <button ng-click="backToHome()"
+                            class="bold color-blue no-padding-top no-padding-bottom ion-close-round button button-clear button-positive">
+                        Annuler la proposition
                     </button>
                 </div>
             </div>
-        </form>
-    </ion-content>
+            <form name="addSuggestion" ng-submit="createSuggestion(suggestion)" novalidate>
+                <div class="card padding no-margin-top bg-idea bg-idea-white">
+                    <div class="text-center">
+                        <h1>Vous souhaitez améliorer votre expérience Best Western ?</h1>
+                        <h2 class="color-grey">Soumettez-nous votre idée</h2>
+                    </div>
+                    <div class="list color-blue">
+
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Hôtel
+                            </div>
+                            <select name="hostel" ng-model="suggestion.hotel"
+                                    ng-options="hotel.id as hotel.name for hotel in hostels" required>
+                            </select>
+                        </label>
+                        <div class="row">
+                            <span class="col assertive"
+                                  ng-show="addSuggestion.hostel.$touched && addSuggestion.hostel.$invalid">Vous devez sélectionner un hôtel.</span>
+                        </div>
+
+                        <label class="item item-input">
+                            <span class="input-label">Titre</span>
+                            <input name="title" type="text" ng-model="suggestion.title" required>
+                        </label>
+                        <div class="row">
+                            <span class="col assertive"
+                                  ng-show="addSuggestion.title.$touched && addSuggestion.title.$invalid">Vous devez saisir un titre.</span>
+                        </div>
+
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Catégorie
+                            </div>
+                            <select name="thematic" ng-model="suggestion.thematic"
+                                    ng-options="thematic.id as thematic.name for thematic in thematics" required>
+                            </select>
+                        </label>
+                        <div class="row">
+                            <span class="col assertive"
+                                  ng-show="addSuggestion.thematic.$touched && addSuggestion.thematic.$invalid">Vous devez sélectionner une catégorie.</span>
+                        </div>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Description</span>
+                            <textarea name="description" required rows="5" type="text"
+                                      ng-model="suggestion.description"></textarea>
+                        </label>
+                        <div class="row">
+                            <span class="col assertive"
+                                  ng-show="addSuggestion.description.$touched && addSuggestion.description.$invalid">Vous devez saisir une description.</span>
+                        </div>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Justification</span>
+                            <textarea name="justification" required rows="5" type="text"
+                                      ng-model="suggestion.justification"></textarea>
+                        </label>
+                        <div class="row">
+                            <span class="col assertive"
+                                  ng-show="addSuggestion.justification.$touched && addSuggestion.justification.$invalid">Vous devez saisir une justification.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button ng-disabled="addSuggestion.$invalid" type="submit" class="button button-energized">
+                            Valider la proposition
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </ion-content>
+    </div>
 </ion-view>

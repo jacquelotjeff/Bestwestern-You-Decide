@@ -1,36 +1,40 @@
 <ion-view class="fond" view-title="<img class='title-image' src='./img/logo_login.png' />">
-  <ion-content >
-    <ion-list>
-      <ion-item class="list card">
-        <div class="row item">
-          <div class="col">
-            <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
-          </div>
+    <div class="content">
+        <ion-content class="content-list-suggestion">
+            <ion-list>
+                <ion-item class="list card">
+                    <div class="row item">
+                        <div class="col">
+                            <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
+                        </div>
 
-          <div class="col col-60">
-            <div class="textTitle">{{suggestion.title}}</div>
+                        <div class="col col-60">
+                            <div class="textTitle">{{suggestion.title}}</div>
 
-            <p>Catégorie : <span class="textColor">{{suggestion.themeName}}</span></p>
+                            <p>Catégorie : <span class="textColor">{{suggestion.themeName}}</span></p>
 
-            <p>Proposée le <span class="textColor">{{suggestion.date}}</span> </p>
-          </div>
-        </div>
+                            <p>Proposée le <span class="textColor">{{suggestion.date}}</span></p>
+                        </div>
+                    </div>
 
-        <ion-item class="item item-body">
-          <div class="textTitle"> {{suggestion.votes}} personnes ont voté <span class="textColor">POUR</span></div>
-        </ion-item>
+                    <ion-item class="item item-body">
+                        <div class="textTitle"> {{suggestion.votes}} personnes ont voté <span
+                                class="textColor">POUR</span></div>
+                    </ion-item>
 
-        <div class="item item-body">
-          <div class="textTitle">Description</div>
-          <p>
-            {{suggestion.description}}
-          </p>
-        </div>
-      </ion-item>
+                    <div class="item item-body">
+                        <div class="textTitle">Description</div>
+                        <p>
+                            {{suggestion.description}}
+                        </p>
+                    </div>
+                </ion-item>
 
-      <button class="button button-block button-energized" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 200px; margin-left:25%;">
-        Je vote pour cette idée
-      </button>
-    </ion-list>
-  </ion-content>
+                <button class="button button-block button-energized" ng-controller="PopupCtrl" ng-click="showAlert()"
+                        style="border-radius:30px; width: 200px; margin-left:25%;">
+                    Je vote pour cette idée
+                </button>
+            </ion-list>
+        </ion-content>
+    </div>
 </ion-view>
