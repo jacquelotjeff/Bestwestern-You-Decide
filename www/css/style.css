@@ -213,6 +213,7 @@ ion-item:first-child {
     font-size: 25px;
     color: #efb102;
     margin: 15px;
+    vertical-align: middle;
 }
 
 .login label {
@@ -317,7 +318,7 @@ input:-webkit-autofill {
 }
 
 .bar {
-    height: 75px;
+    height: 44px;
     background: transparent !important;
     border-bottom: none;
     z-index: 999;

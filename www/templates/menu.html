@@ -12,14 +12,14 @@
 </ion-side-menu-content>
 
 <ion-side-menu side="left">
-    <ion-header-bar style="background-color:#03135E;"class="bar-stable">
+    <ion-header-bar style="background-color:#03135E !important;"class="bar-stable">
 
     </ion-header-bar>
     <ion-content>
         <div style="width:100%;height:110px;padding:8px;background:#073CC6;">
             <div class="row">
                 <div class="col col-33" style="position: relative;overflow: hidden;height:85px;border-radius: 50%;border: 2px solid #395CD0">
-                    <img src="{{ user.photo }}" style="display: inline;margin: -17px -7px;height: 165%;width: auto;">
+                    <img src="{{ user.photo }}" style="margin-left: -6px; margin-top: -6px;">
                 </div>
                 <div class="col col-67" style="padding-top: 10px;">
                     <p class="name">{{ user.firstname }}</p>
@@ -32,6 +32,9 @@
         </div>
         <ion-list>
             <div ng-hide="!user">
+                <ion-item menu-close href="#/app/suggestions/add">
+                    <p><span class="menu-icon"><i class="icon ion-plus"></i></span> Je propose mon idée</p>
+                </ion-item>
                 <ion-item menu-close href="#/app/compte">
                     <p><span class="menu-icon"><i class="icon ion-person"></i></span> Mon compte</p>
                 </ion-item>
@@ -42,11 +45,11 @@
                 <ion-item menu-close href="#/app/parametres">
                     <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
                 </ion-item>
-                <div class="col button-suggestion">
-                    <button class="button button-full button-positive button-suggestion-add" ng-click="addSuggestion()">
-                        Je propose mon idée
-                    </button>
-                </div>
+                <!--<div class="col button-suggestion">-->
+                    <!--<button class="button button-full button-positive button-suggestion-add" ng-click="addSuggestion()">-->
+                        <!--Je propose mon idée-->
+                    <!--</button>-->
+                <!--</div>-->
             </div>
             <div ng-hide="user">
                 <ion-item menu-close href="#/app/login">
@@ -55,7 +58,7 @@
             </div>
         </ion-list>
     </ion-content>
-    <div class="bar bar-footer" style="height: 75px;">
+    <div class="bar bar-footer" style="height: 75px; position: absolute; bottom: 0px;">
     <img src="./img/logo.jpg" style="width: 100%;">
     </div>
     </ion-side-menu>
