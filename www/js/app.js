@@ -87,6 +87,32 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 data: {
                     requireLogin: true
                 }
+            })
+
+            .state('app.suggestions_a_valider', {
+                url: '/suggestions-a-valider',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/suggestions-a-valider.html',
+                        controller: 'SuggestionsAValiderCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
+                }
+            })
+
+            .state('app.suggestions_a_valider_detail', {
+                url: '/suggestions-a-valider/:suggestionId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/suggestions-a-valider.html',
+                        controller: 'SuggestionAValiderCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
+                }
             });
 
         // if none of the above states are matched, use this as the fallback

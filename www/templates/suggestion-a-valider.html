@@ -1,0 +1,41 @@
+<ion-view view-title="Suggestion">
+  <ion-content >
+    <ion-list>
+      <ion-item class="list card">
+        <div class="row item">
+          <div class="col">
+            <i class="icon col col-50 pictos ion-{{suggestion.theme}}"></i>
+          </div>
+
+          <div class="col col-60">
+            <div class="textTitle">{{suggestion.title}}</div>
+
+            <p>Catégorie : <span class="textColor">{{suggestion.themeName}}</span></p>
+
+            <p>Proposée le <span class="textColor">{{suggestion.date}}</span> </p>
+          </div>
+        </div>
+
+        <div class="item item-body">
+          <div class="textTitle">Description</div>
+          <p>
+            {{suggestion.description}}
+          </p>
+        </div>
+        <div class="item item-body">
+          <div class="textTitle">Justification</div>
+          <p>
+            {{suggestion.justification}}
+          </p>
+        </div>
+      </ion-item>
+
+      <button class="button button-block button-energized" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 100px; margin-left:25%;">
+        Valider la suggestion
+      </button>
+      <button class="button button-block button-assertive" ng-controller="PopupCtrl" ng-click="showAlert()" style="border-radius:30px; width: 100px; margin-left:25%;">
+        Refuser la suggestion
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-view>

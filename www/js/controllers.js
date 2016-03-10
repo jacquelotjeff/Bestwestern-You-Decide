@@ -137,3 +137,35 @@ angular.module('starter.controllers', [])
             });
         };
     })
+
+    .controller('SuggestionsAValiderCtrl', function ($scope, $ionicPopup, $http) {
+        console.log("oui");
+        //TODO replace url api to retrive suggestions to valid
+        $http.get("http://demo6872153.mockable.io/suggestions")
+        .success(function (data) {
+            console.log("ok");
+            $scope.suggestions = data.suggestions;
+        })
+        .error(function (data) {
+            console.log("pas ok");
+            var alertPopup = $ionicPopup.alert({
+                title: 'Erreur de connexion',
+                template: 'L\'API semble ne pas répondre.'
+            });
+        });
+    })
+
+    .controller('SuggestionAValiderCtrl', function ($scope, $http, $stateParams) {
+        alert("textttt");
+        $http.get("http://demo6872153.mockable.io/suggestion")
+            .success(function (data) {
+                $scope.suggestion = data.suggestion;
+                console.log($scope.suggestion);
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Erreur de connexion',
+                    template: 'L\'API semble ne pas répondre.'
+                });
+            });
+    })
