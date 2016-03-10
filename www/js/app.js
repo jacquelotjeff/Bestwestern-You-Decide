@@ -54,7 +54,7 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 url: '/suggestions',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/suggestions.html',
+                        templateUrl: 'templates/suggestion/suggestions.html',
                         controller: 'SuggestionsCtrl'
                     }
                 },
@@ -67,7 +67,7 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 url: '/suggestions/add',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/add-suggestion.html',
+                        templateUrl: 'templates/suggestion/add-suggestion.html',
                         controller: 'SuggestionAddCtrl'
                     }
                 },
@@ -80,12 +80,32 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 url: '/suggestions/:suggestionId',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/suggestion.html',
+                        templateUrl: 'templates/suggestion/suggestion.html',
                         controller: 'SuggestionCtrl'
                     }
                 },
                 data: {
                     requireLogin: true
+                }
+            })
+
+            .state('app.suggestions_admin', {
+                url: '/admin/manage-suggestions',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/manage-suggestion/manage-suggestions.html',
+                        controller: 'ManageSuggestionsCtrl'
+                    }
+                }
+            })
+
+            .state('app.suggestion_admin', {
+                url: '/admin/manage-suggestions/:suggestionId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/manage-suggestion/manage-one-suggestion.html',
+                        controller: 'ManageOneSuggestionCtrl'
+                    }
                 }
             });
 
@@ -101,5 +121,4 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 $location.path("/app/login");
             }
         });
-
     });
