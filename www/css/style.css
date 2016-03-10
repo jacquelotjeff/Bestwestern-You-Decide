@@ -190,7 +190,7 @@ ion-item:first-child {
 }
 
 .content-list-suggestion ion-scroll[direction=y] {
-  height: 100vh;
+  height: 150vh;
 }
 
 .theme-name {
@@ -282,10 +282,6 @@ ion-item:first-child {
 
 .login label input:focus ~ .border-tiny-down {
     background-color: #efb102 !important;
-}
-
-.suggestion-list .list {
-    padding-top: 35px !important;
 }
 
 .logo-login {
