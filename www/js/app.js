@@ -87,6 +87,19 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 data: {
                     requireLogin: true
                 }
+            })
+
+            .state('app.categories', {
+              url: '/categories',
+              views: {
+                'menuContent': {
+                    templateUrl: 'templates/categories.html',
+                    controller: 'CategoriesCtrl'
+                },
+                data: {
+                    requireLogin: true
+                }
+              }
             });
 
         // if none of the above states are matched, use this as the fallback

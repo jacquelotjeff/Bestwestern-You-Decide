@@ -137,3 +137,17 @@ angular.module('starter.controllers', [])
             });
         };
     })
+
+    .controller('CategoriesCtrl', function ($scope, $http, $stateParams) {
+        $http.get("http://demo6872153.mockable.io/thematics")
+            .success(function (data) {
+                $scope.categories = data.thematics;
+                console.log($scope.categories);
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Erreur de connexion',
+                    template: 'L\'API semble ne pas répondre.'
+                });
+            });
+    })
