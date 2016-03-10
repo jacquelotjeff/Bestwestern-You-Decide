@@ -59,7 +59,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'SuggestionCtrl'
       }
     }
-  });
+  })
+
+  .state('app.suggestions_admin', {
+    url: '/suggestionsAdmin',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/suggestionsAdmin.html',
+        controller: 'SuggestionsAdminCtrl'
+      }
+    }
+  })
+
+  .state('app.suggestion_admin', {
+    url: '/suggestionAdmin/:suggestionId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/suggestionAdmin.html',
+        controller: 'SuggestionAdminCtrl'
+      }
+    }
+  })
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
 });

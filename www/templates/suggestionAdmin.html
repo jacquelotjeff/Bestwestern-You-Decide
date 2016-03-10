@@ -28,9 +28,18 @@
         </div>
       </ion-item>
 
-      <button class="button button-block button-energized" ng-controller="SuggestionCtrl" ng-click="showAlert()" style="border-radius:30px; width: 200px; margin-left:25%;">
-        Je vote pour cette idée
-      </button>
+      <div class="row">
+        <div class="col">
+          <button class="button button-block button-balanced" ng-controller="SuggestionAdminCtrl" ng-click="validateSuggestion()" style="border-radius:30px; width: 150px;">
+            Valider
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-block button-assertive" ng-controller="SuggestionAdminCtrl" ng-click="refuseSuggestion()" style="border-radius:30px; width: 150px; margin-left:15%;">
+            Refuser
+          </button>
+        </div>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
