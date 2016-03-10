@@ -28,7 +28,9 @@
             </div>
         </div>
         <div style="height:50px;padding:15px;">
-            Membre <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">{{ user.status }}</span>
+            Membre
+            <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">{{ user.status }}</span>
+            <span style="text-transform:uppercase;color:#aaaaaa;" ng-if="user.admin == 'true'">Administrateur</span>
         </div>
         <ion-list>
             <div ng-hide="!user">

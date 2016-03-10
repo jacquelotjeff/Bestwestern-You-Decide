@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-    .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
 
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('LoginCtrl', function ($scope, userProvider, $location) {
+    .controller('LoginCtrl', function ($scope, userProvider, $location, $ionicPopup) {
         if (typeof user !== 'undefined') {
             $location.path('app/suggestions')
         }
@@ -18,7 +18,15 @@ angular.module('starter.controllers', [])
         $scope.user = {};
 
         $scope.signIn = function (user) {
-            userProvider.signIn(user);
+
+            if (typeof  user.email !== 'undefined') {
+                userProvider.signIn(user);
+            } else {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Attention',
+                    template: 'Merci de renseigner vos identifiants pour vous connecter.'
+                });
+            }
         }
     })
 
