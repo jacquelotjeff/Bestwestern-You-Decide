@@ -26,7 +26,15 @@ angular.module('starter.controllers', [])
         $scope.user = {};
 
         $scope.signIn = function (user) {
-            userProvider.signIn(user);
+
+            if (typeof  user.email !== 'undefined') {
+                userProvider.signIn(user);
+            } else {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Attention',
+                    template: 'Merci de renseigner vos identifiants pour vous connecter.'
+                });
+            }
         }
     })
 
