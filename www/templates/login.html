@@ -7,28 +7,34 @@
         <form class="form-login">
             <div class="card login">
                 <p class="desc-login">
-                    Avec l’application YOU DECIDE, BestWestern vous laisse la parole. Soumettez-nous vos suggestions et vos meilleures idées pour améliorer votre expérience chez nous. <br/>
-                    Soumises aux votes des autres clients, vos idées se concrétiseront dès que le seuil des 500 votes sera atteint. <br/>
-                    N’hésitez pas à voter pour les idées qui vous intéressent !
+                    Avec l’application YOU DECIDE, <br/>
+                    BestWestern vous donne le pouvoir !
                 </p>
-                    <div class="list">
-                        <label class="item item-input">
-                            <span class="input-label">Email</span>
-                            <input type="email" ng-model="user.email">
-                            <div class="border-tiny-up border-tiny-left"></div>
-                            <div class="border-tiny-up border-tiny-right"></div>
-                            <div class="border-tiny-down border-tiny-left"></div>
-                            <div class="border-tiny-down border-tiny-right"></div>
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Mot de passe</span>
-                            <input type="password" ng-model="user.password">
-                            <div class="border-tiny-up border-tiny-left"></div>
-                            <div class="border-tiny-up border-tiny-right"></div>
-                            <div class="border-tiny-down border-tiny-left"></div>
-                            <div class="border-tiny-down border-tiny-right"></div>
-                        </label>
+                <div class="row">
+                    <div class="col col-50 col-offset-25">
+                        <div class="card more-login" ng-click="showAlertLogin()">
+                            <p>En savoir plus</p> 
+                        </div>
                     </div>
+                </div> 
+                <div class="list">
+                    <label class="input-login item item-input">
+                        <span class="input-label">Email</span>
+                        <input type="email" ng-model="user.email">
+                        <div class="border-tiny-up border-tiny-left"></div>
+                        <div class="border-tiny-up border-tiny-right"></div>
+                        <div class="border-tiny-down border-tiny-left"></div>
+                        <div class="border-tiny-down border-tiny-right"></div>
+                    </label>
+                    <label class="input-login item item-input">
+                        <span class="input-label">Mot de passe</span>
+                        <input type="password" ng-model="user.password">
+                        <div class="border-tiny-up border-tiny-left"></div>
+                        <div class="border-tiny-up border-tiny-right"></div>
+                        <div class="border-tiny-down border-tiny-left"></div>
+                        <div class="border-tiny-down border-tiny-right"></div>
+                    </label>
+                </div>
             </div>
         </form>
         <a class="button-connect button button-block button-positive" ng-click="signIn(user)">Se connecter</a>

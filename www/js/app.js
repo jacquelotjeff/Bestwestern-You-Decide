@@ -63,6 +63,19 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 }
             })
 
+            .state('app.account', {
+                url: '/account',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/account.html',
+                        controller: 'AccountCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
+                }
+            })
+
             .state('app.suggestions_add', {
                 url: '/suggestions/add',
                 views: {
