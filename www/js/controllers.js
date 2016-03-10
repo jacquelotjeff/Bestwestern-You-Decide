@@ -26,7 +26,6 @@ angular.module('starter.controllers', [])
         $scope.user = {};
 
         $scope.signIn = function (user) {
-
             if (typeof  user.email !== 'undefined') {
                 userProvider.signIn(user);
             } else {
@@ -52,11 +51,11 @@ angular.module('starter.controllers', [])
             });
     })
 
-    .controller('PopupCtrl',function($scope, $ionicPopup) {
-       $scope.showAlert = function() {
-         var alertPopup = $ionicPopup.alert({
-           title: 'Confirmation',
-           template: 'Votre vote a été pris en compte.'
-         });
-       };
+    .controller('PopupCtrl', function ($scope, $ionicPopup) {
+        $scope.showAlert = function () {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Confirmation',
+                template: 'Votre vote a été pris en compte.'
+            });
+        };
     })

@@ -102,7 +102,7 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 }
             })
 
-            .state('app.suggestions_admin', {
+            .state('app.admin_manage_suggestions', {
                 url: '/admin/manage-suggestions',
                 views: {
                     'menuContent': {
@@ -112,13 +112,39 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 }
             })
 
-            .state('app.suggestion_admin', {
+            .state('app.admin_manage_one_suggestion', {
                 url: '/admin/manage-suggestions/:suggestionId',
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/manage-suggestion/manage-one-suggestion.html',
                         controller: 'ManageOneSuggestionCtrl'
                     }
+                }
+            })
+
+            .state('app.admin_validate_suggestions', {
+                url: '/admin/validate-suggestions',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/validate-suggestion/validate-suggestions.html',
+                        controller: 'ValidateSuggestionsCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
+                }
+            })
+
+            .state('app.admin_validate_one_suggestion', {
+                url: '/admin/validate-suggestions/:suggestionId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/validate-suggestion/validate-one-suggestion.html',
+                        controller: 'ValidateOneSuggestionCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
                 }
             });
 
