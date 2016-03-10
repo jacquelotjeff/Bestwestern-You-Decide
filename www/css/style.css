@@ -329,10 +329,13 @@ ion-item:first-child {
     color: #333;
     text-align:center;
 }
-
+.more-login {
+	margin:10px;
+}
 .more-login p {
-	padding-top: 10px;
-	font-size:13px;
+	padding-top: 7px;
+	margin-bottom: 7px !important;
+	font-size:14px;
 	text-align: center;
 }
 
