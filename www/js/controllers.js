@@ -80,20 +80,39 @@ angular.module('starter.controllers', [])
 
             $http.post(link, suggestion)
                 .success(function (response) {
-                    console.log(response);
+
                     if (response.error == false) {
-                        var alertPopup = $ionicPopup.alert({
+
+                        var popup = $ionicPopup.show({
                             title: 'La suggestion n\'a pas pu être ajoutée',
-                            template: 'Nous ne semblons pas pouvoir ajouter votre suggestion.'
+                            template: 'Nous ne semblons pas pouvoir ajouter votre suggestion.',
+                            buttons: [
+                                { 
+                                    text: "OK",
+                                    type: "button-positive",
+                                    onTap: function(e){
+                                        $state.go("app.suggestions");
+                                    }
+                                }
+                            ]
                         });
                     } else {
-                        var alertPopup = $ionicPopup.alert({
+                        var popup = $ionicPopup.show({
                             title: response.msg,
-                            template: response.longMsg
+                            template: response.longMsg,
+                            buttons: [
+                                { 
+                                    text: "OK",
+                                    type: "button-positive",
+                                    onTap: function(e){
+                                        $state.go("app.suggestions");
+                                    }
+                                }
+                            ]
                         });
                     }
                 }).error(function () {
-                var alertPopup = $ionicPopup.alert({
+                var popup = $ionicPopup.alert({
                     title: 'Erreur de connexion',
                     template: 'L\'API semble ne pas répondre.'
                 });
@@ -139,15 +158,12 @@ angular.module('starter.controllers', [])
     })
 
     .controller('SuggestionsAValiderCtrl', function ($scope, $ionicPopup, $http) {
-        console.log("oui");
         //TODO replace url api to retrive suggestions to valid
         $http.get("http://demo6872153.mockable.io/suggestions")
         .success(function (data) {
-            console.log("ok");
             $scope.suggestions = data.suggestions;
         })
         .error(function (data) {
-            console.log("pas ok");
             var alertPopup = $ionicPopup.alert({
                 title: 'Erreur de connexion',
                 template: 'L\'API semble ne pas répondre.'
@@ -155,7 +171,7 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('SuggestionAValiderCtrl', function ($scope, $http, $stateParams, $ionicPopup) {
+    .controller('SuggestionAValiderCtrl', function ($scope, $http, $stateParams, $ionicPopup, $state) {
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
@@ -177,7 +193,10 @@ angular.module('starter.controllers', [])
                         {
                             text: '<b>Continuer</b>',
                             type: 'button-positive',
-                        }
+                            onTap: function(e) {
+                                $state.go("app.suggestions");
+                            }
+                        },
                     ]
                 });
             };
@@ -198,9 +217,9 @@ angular.module('starter.controllers', [])
                             type: 'button-positive',
                             onTap: function(e) {
                                 if (!$scope.data.motif) {
-                                    //don't allow the user to close unless he enters motif
                                     e.preventDefault();
                                 } else {
+                                    $state.go("app.suggestions");
                                     //TODO send e-mail with motif to the user who suggest
                                 }
                             }
