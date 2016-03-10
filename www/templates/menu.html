@@ -27,10 +27,9 @@
                 </div>
             </div>
         </div>
-        <div style="height:50px;padding:15px;">
+        <div style="height:50px;padding:15px; font-size: 20px; border-bottom: 0.1px solid #ccc; margin-bottom: 10px;">
             Membre
-            <span style="text-transform:uppercase;color:#aaaaaa;font-weight:bold;">{{ user.status }}</span>
-            <span style="text-transform:uppercase;color:#aaaaaa;" ng-if="user.admin == 'true'">Administrateur</span>
+            <span style="text-transform:uppercase;color:#d1d1d1;font-weight:900;">{{ user.status }}</span>
         </div>
         <ion-list>
             <div ng-hide="!user">
@@ -44,8 +43,8 @@
                     <p><span class="menu-icon" style="margin:18px !important;"><i class="icon ion-lightbulb"></i></span> Idées déjà traitées</p>
                 </ion-item>
                 <!-- accessible qu'à l'admin -->
-                <div ng-if="user.admin == 'true'">
-                    <span>Administration</span>
+                <div ng-if="user.admin == 'true'" class="admin-menu">
+                    <p class="label-admin"><i class="icon ion-arrow-down-b"></i> Administration</p>
                     <ion-item menu-close href="#/app/admin/validate-suggestions">
                         <p><span class="menu-icon"><i class="icon ion-person-add"></i></span> Nouvelles entrées</p>
                     </ion-item>

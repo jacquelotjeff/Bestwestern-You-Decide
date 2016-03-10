@@ -87,6 +87,14 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+.bar button.back-button {
+    margin-top: 17px;
+}
+
+.bar-stable .button.button-clear {
+    color: #0620B7;
+}
+
 .item-input {
     padding: 6px 0 5px;
 }
@@ -185,7 +193,7 @@ ion-item:first-child {
 }
 
 .content-list-suggestion {
-    
+
     top: 0px;
     height: 95vh;
 }
@@ -200,30 +208,30 @@ ion-item:first-child {
     transform: translateY(-50%) rotate(-90deg);
 }
 
-.menu-name .name{
-	color: #fff !important;
+.menu-name .name {
+    color: #fff !important;
 }
 
 .account-name {
-	padding-top: 15px;
+    padding-top: 15px;
 }
 
 .account-picture {
-	position: relative;
-	overflow: hidden;
-	height:85px;
-	border-radius: 50%;
-	border: 5px solid #FDF7E6;
+    position: relative;
+    overflow: hidden;
+    height: 85px;
+    border-radius: 50%;
+    border: 5px solid #FDF7E6;
 }
 
 .account-picture img {
-	margin-left: -6px;
-	margin-top: -6px;
+    margin-left: -6px;
+    margin-top: -6px;
 }
 
-.account-name .name{
-	color: #0620B7 !important;
-	font-weight: bold;
+.account-name .name {
+    color: #0620B7 !important;
+    font-weight: bold;
 }
 
 .name {
@@ -232,9 +240,9 @@ ion-item:first-child {
 }
 
 .menu-icon {
-    font-size: 25px;
+    font-size: 35px;
     color: #efb102;
-    margin: 15px;
+    margin: 10px 14px 10px 14px;
     vertical-align: middle;
 }
 
@@ -327,20 +335,22 @@ ion-item:first-child {
     font-size: 14px;
     padding: 40px 40px 0 40px;
     color: #333;
-    text-align:center;
-}
-.more-login {
-	margin:10px;
-}
-.more-login p {
-	padding-top: 7px;
-	margin-bottom: 7px !important;
-	font-size:14px;
-	text-align: center;
+    text-align: center;
 }
 
-.more-login:hover{
-	cursor: pointer;
+.more-login {
+    margin: 10px;
+}
+
+.more-login p {
+    padding-top: 7px;
+    margin-bottom: 7px !important;
+    font-size: 14px;
+    text-align: center;
+}
+
+.more-login:hover {
+    cursor: pointer;
 }
 
 .button-connect {
@@ -406,45 +416,68 @@ input:-webkit-autofill {
 }
 
 .content-menu {
-	top:25px;
+    top: 25px;
 }
 
 .header-menu {
-	height:25px !important;
-	background-color:#03135E !important;
+    height: 25px !important;
+    background-color: #03135E !important;
 }
 
 .input-login {
-	margin-top: 20px;
-	margin-bottom: 20px !important;
+    margin-top: 20px;
+    margin-bottom: 20px !important;
 }
 
 .ion-navicon-round {
-	color:#0620b7 !important;
+    color: #0620b7 !important;
 }
 
 .bar .title + .buttons {
-	top: 25px;
-	right: 35px;
+    top: 25px;
+    right: 35px;
 }
 
 .account-details {
-	padding-left: 15px;
-	margin-bottom: 17px;
-	font-size:17px;
+    padding-left: 15px;
+    margin-bottom: 17px;
+    font-size: 17px;
 }
 
 .account-details-list li {
-	padding: 0px 0 20px 30px;
+    padding: 0px 0 20px 30px;
     font-size: 13px;
 }
 
-.account-details span, .account-details-list span{
-	color:#0620b7 !important;
-	font-weight: bold;
+.account-details span, .account-details-list span {
+    color: #0620b7 !important;
+    font-weight: bold;
 }
 
 .account-details img {
-	margin-top: -8px;
-	position: absolute;
+    margin-top: -8px;
+    position: absolute;
+}
+
+/**
+ * MENU ADMIN
+ */
+.admin-menu .label-admin {
+    background-color: #4c4c4c;
+    color: #FFF;
+    margin: 0;
+    padding-top:10px;
+    padding-bottom: 8px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.admin-menu ion-item p span {
+    color: #4c4c4c;
+}
+
+ion-side-menu .item {
+    border: none;
 }
