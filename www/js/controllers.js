@@ -10,7 +10,9 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller('LoginCtrl', function ($scope, userProvider, $location, $ionicPopup) {
+    .controller('LoginCtrl', function ($scope, userProvider, $location, $ionicPopup, $ionicSideMenuDelegate) {
+
+        $ionicSideMenuDelegate.canDragContent(false);
 
         $scope.showAlertLogin = function() {
             var alertPopup = $ionicPopup.alert({

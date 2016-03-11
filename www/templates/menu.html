@@ -9,22 +9,22 @@
                 </button>
             </ion-nav-buttons>
         </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-</ion-side-menu-content>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-<ion-side-menu side="left">
-    <ion-header-bar class="header-menu bar-stable">
-
-    </ion-header-bar>
-    <ion-content class="content-menu">
-        <div style="width:100%;height:110px;padding:8px;background:#073CC6;">
-            <div class="row">
-                <div class="col col-33" style="position: relative;overflow: hidden;height:85px;border-radius: 50%;border: 2px solid #395CD0">
-                    <img src="{{ user.photo }}" style="margin-left: -6px; margin-top: -6px;">
-                </div>
-                <div class="col col-67 menu-name" style="padding-top: 10px;">
-                    <p class="name">{{ user.firstname }}</p>
-                    <p class="name">{{ user.lastname }}</p>
+    <ion-side-menu side="left">
+        <ion-header-bar class="header-menu bar-stable">
+        </ion-header-bar>
+        <ion-content class="content-menu">
+            <div style="width:100%;height:110px;padding:8px;background:#073CC6;">
+                <div class="row">
+                    <div class="col col-33" style="position: relative;overflow: hidden;height:85px;border-radius: 50%;border: 2px solid #395CD0">
+                        <img src="{{ user.photo }}" style="margin-left: -6px; margin-top: -6px;">
+                    </div>
+                    <div class="col col-67 menu-name" style="padding-top: 10px;">
+                        <p class="name">{{ user.firstname }}</p>
+                        <p class="name">{{ user.lastname }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,23 +49,35 @@
                     <ion-item menu-close href="#/app/admin/validate-suggestions">
                         <p><span class="menu-icon"><i class="icon ion-person-add"></i></span> Nouvelles entrées</p>
                     </ion-item>
-                    <ion-item menu-close href="#/app/admin/manage-suggestions">
-                        <p><span class="menu-icon"><i class="icon ion-android-checkbox-outline"></i></span> Validées par les clients</p>
+                    <ion-item menu-close href="#/app/account">
+                        <p><span class="menu-icon"><i class="icon ion-person"></i></span> Mon compte</p>
                     </ion-item>
-                    <ion-item menu-close href="#/app/parametres">
-                        <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
+                    <ion-item menu-close href="#/app/suggestions">
+                        <p><span class="menu-icon" style="margin:18px !important;"><i class="icon ion-lightbulb"></i></span> Idées déjà traitées</p>
+                    </ion-item>
+                    <!-- accessible qu'à l'admin -->
+                    <div ng-if="user.admin == 'true'">
+                        <span>Administration</span>
+                        <ion-item menu-close href="#/app/admin/manage-suggestions">
+                            <p><span class="menu-icon"><i class="icon ion-person-add"></i></span> Nouvelles entrées</p>
+                        </ion-item>
+                        <ion-item menu-close href="#/app/admin/manage-suggestions">
+                            <p><span class="menu-icon"><i class="icon ion-android-checkbox-outline"></i></span> Validées par les clients</p>
+                        </ion-item>
+                        <ion-item menu-close href="#/app/parametres">
+                            <p><span class="menu-icon"><i class="icon ion-gear-a"></i></span> Paramètres</p>
+                        </ion-item>
+                    </div>
+                </div>
+                <div ng-hide="user">
+                    <ion-item menu-close href="#/app/login">
+                        <p><span class="menu-icon"><i class="icon ion-locked"></i></span> Connexion</p>
                     </ion-item>
                 </div>
-            </div>
-            <div ng-hide="user">
-                <ion-item menu-close href="#/app/login">
-                    <p><span class="menu-icon"><i class="icon ion-locked"></i></span> Connexion</p>
-                </ion-item>
-            </div>
-        </ion-list>
-    </ion-content>
-    <div class="bar bar-footer" style="height: 75px; position: absolute; bottom: 0px;">
-    <img src="./img/logo.jpg" style="width: 100%;">
-    </div>
+            </ion-list>
+        </ion-content>
+        <div class="bar bar-footer" style="height: 75px; position: absolute; bottom: 0px;">
+            <img src="./img/logo.jpg" style="width: 100%;">
+        </div>
     </ion-side-menu>
 </ion-side-menus>

@@ -3,9 +3,10 @@
 app
 
 
-    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state) {
-        // Hide Back button
-        // TODO Cacher le "bouton de retour" BACK si l'utilisateur arrive de la connexion
+    .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
+        
+        $ionicNavBarDelegate.showBackButton(false);
+        $ionicSideMenuDelegate.canDragContent(true);
 
         $scope.options = $scope.options || {};
         $scope.options.hideBackButton = true;
@@ -27,9 +28,10 @@ app
         }
     })
 
-    .controller('SuggestionAddCtrl', function ($scope, $http, $ionicPopup, $stateParams, $state) {
+    .controller('SuggestionAddCtrl', function ($scope, $http, $ionicPopup, $stateParams, $state, $ionicSideMenuDelegate) {
 
         $scope.suggestion = {};
+        $ionicSideMenuDelegate.canDragContent(true);
 
         //Get the hotels
         $http.get("http://demo6872153.mockable.io/hostels")
@@ -97,7 +99,10 @@ app
         }
     })
 
-    .controller('SuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup) {
+    .controller('SuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup, $ionicSideMenuDelegate) {
+
+        $ionicSideMenuDelegate.canDragContent(true);
+
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
