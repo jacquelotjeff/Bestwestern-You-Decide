@@ -43,7 +43,6 @@ angular.module('starter.controllers', [])
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
-                console.log($scope.suggestion);
             })
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({

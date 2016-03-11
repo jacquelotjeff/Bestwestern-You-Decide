@@ -129,9 +129,6 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                         templateUrl: 'templates/validate-suggestion/validate-suggestions.html',
                         controller: 'ValidateSuggestionsCtrl'
                     }
-                },
-                data: {
-                    requireLogin: true
                 }
             })
 
@@ -141,6 +138,32 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                     'menuContent': {
                         templateUrl: 'templates/validate-suggestion/validate-one-suggestion.html',
                         controller: 'ValidateOneSuggestionCtrl'
+                    },
+                    data: {
+                        requireLogin: true
+                    }
+                }
+            })
+
+            .state('app.admin_manage_thematics', {
+                url: '/admin/manage-thematics',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/manage-thematic/manage-thematics.html',
+                        controller: 'ManageThematicsCtrl'
+                    },
+                    data: {
+                        requireLogin: true
+                    }
+                }
+            })
+
+            .state('app.admin_manage_thematics_add', {
+                url: '/admin/manage-thematics/add',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/manage-thematic/manage-thematics-add.html',
+                        controller: 'ManageThematicAddCtrl'
                     }
                 },
                 data: {

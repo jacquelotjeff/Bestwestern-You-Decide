@@ -4,7 +4,6 @@ app
 
 
     .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
-        
         $ionicNavBarDelegate.showBackButton(false);
         $ionicSideMenuDelegate.canDragContent(true);
 
@@ -99,7 +98,7 @@ app
         }
     })
 
-    .controller('SuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup, $ionicSideMenuDelegate) {
+    .controller('SuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $ionicSideMenuDelegate) {
 
         $ionicSideMenuDelegate.canDragContent(true);
 
@@ -113,7 +112,7 @@ app
                     template: 'L\'API semble ne pas répondre.'
                 });
             });
-        $scope.showAlert = function() {
+        $scope.showAlert = function () {
             var alertPopup = $ionicPopup.alert({
                 title: 'Confirmation',
                 template: 'Votre vote a été pris en compte.'
