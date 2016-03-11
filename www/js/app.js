@@ -89,17 +89,31 @@ var app = angular.module('starter', ['ionic', 'starter.utils', 'starter.controll
                 }
             })
 
-            .state('app.categories', {
-              url: '/categories',
+// Thématique
+            .state('app.thematics', {
+              url: '/thematics',
               views: {
                 'menuContent': {
-                    templateUrl: 'templates/categories.html',
-                    controller: 'CategoriesCtrl'
+                    templateUrl: 'templates/thematics.html',
+                    controller: 'ThematicsCtrl'
                 },
                 data: {
                     requireLogin: true
                 }
               }
+            })
+
+            .state('app.thematic_add', {
+                url: '/thematic/add',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/add-thematic.html',
+                        controller: 'ThematicAddCtrl'
+                    }
+                },
+                data: {
+                    requireLogin: true
+                }
             });
 
         // if none of the above states are matched, use this as the fallback

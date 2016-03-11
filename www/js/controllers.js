@@ -119,7 +119,6 @@ angular.module('starter.controllers', [])
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
-                console.log($scope.suggestion);
             })
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({
@@ -138,11 +137,15 @@ angular.module('starter.controllers', [])
         };
     })
 
-    .controller('CategoriesCtrl', function ($scope, $http, $stateParams) {
+    .controller('ThematicsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate) {
+        // Hide Back button
+        $scope.options = $scope.options || {};
+        $scope.options.hideBackButton = true;
+
         $http.get("http://demo6872153.mockable.io/thematics")
             .success(function (data) {
-                $scope.categories = data.thematics;
-                console.log($scope.categories);
+                $scope.thematics = data.thematics;
+                console.log($scope.thematics);
             })
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({
@@ -150,4 +153,62 @@ angular.module('starter.controllers', [])
                     template: 'L\'API semble ne pas répondre.'
                 });
             });
+
+        //Go to the addThematic page
+        $scope.addThematic = function () {
+            $state.go("app.thematic_add");
+        }
+
+        //Supprimer une thématique
+        $scope.deleteThematic = function ($stateParams) {
+          var confirmPopup = $ionicPopup.confirm({
+               title: 'Supprimer une thématique',
+               template: 'Êtes-vous sûr de vouloir supprimer définitivement cette thématique?'
+             });
+        }
+
     })
+
+    .controller('ThematicAddCtrl', function($scope, $http, $ionicPopup, $stateParams, $state){
+      $scope.category = {};
+
+      $scope.createThematic = function (thematic) {
+
+          var link = 'http://demo6872153.mockable.io/suggestion-add';
+
+          $http.post(link, thematic)
+              .success(function (response) {
+                  console.log(response);
+                  if (response.error == false) {
+                      var alertPopup = $ionicPopup.alert({
+                          title: 'La catégorie n\'a pas pu être ajoutée',
+                          template: 'Nous ne semblons pas pouvoir ajouter votre catégorie.'
+                      });
+                  } else {
+                      var alertPopup = $ionicPopup.alert({
+                          title: "Catégorie ajoutée",
+                          template: "Nouvelle catégorie ajoutée avec succès!"
+                      });
+                  }
+              }).error(function () {
+              var alertPopup = $ionicPopup.alert({
+                  title: 'Erreur de connexion',
+                  template: 'L\'API semble ne pas répondre.'
+              });
+          });
+
+          //TODO get connected user and store into suggestion
+          //TODO store suggestion object
+          /*
+           $scope.tasks.push({
+           });
+           title: task.title
+           $scope.taskModal.hide();
+           task.title = "";
+           */
+      };
+
+      $scope.backToThematics = function () {
+          $state.go("app.thematics");
+    }
+  })
