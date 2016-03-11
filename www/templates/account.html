@@ -9,18 +9,21 @@
                         </div>
                         <div class="col col-75 account-name">
                             <p class="name">{{ user.firstname }}</p>
-                            <p class="name">{{ user.lastname }}</p>
+                            <div class="row">
+                                <p class="col name">{{ user.lastname }}</p>
+                                <p class="col">({{ user.points }} points)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <p class="account-details">Type de compte : <img src="./img/compte-diamond.jpg" width="150"></p>
-                <p class="account-details">Ancienneté : <span>14/05/2011 (5 ans)</span></p>
+                <p class="account-details">Ancienneté : <span>{{ user.registerDate }} ({{ user.seniority }} ans)</span></p>
                 <p class="account-details">Permissions :</p>
                 <ul class="account-details-list">
-                    <li>Fréquence de proposition : <span> 2 fois par an</span></li>
-                    <li>Pondération d’un vote : <span>x2</span></li>
-                    <li>Récompense d’un vote : <span>3 points</span></li>
-                    <li>Accès aux idées traitées : <span>oui</span></li>
+                    <li>Fréquence de proposition : <span> {{ user.permissions.suggestionFrequencyPerYear }} fois par an</span></li>
+                    <li>Pondération d’un vote : <span>x{{ user.permissions.voteMultiplier }}</span></li>
+                    <li>Récompense d’un vote : <span>{{ user.permissions.voteRewardPoints }} points</span></li>
+                    <li>Accès aux idées traitées : <span>{{user.permissions.accessProcessedIdeas ? "Oui" : "Non"}}</span></li>
                 </ul>
             </div>
             <div class="col col-80 col-offset-10">
