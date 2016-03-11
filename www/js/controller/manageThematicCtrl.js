@@ -1,8 +1,9 @@
 'use strict';
 
 app
-    .controller('ManageThematicsCtrl', function ($scope, $http, $ionicPopup, $state) {
-
+    .controller('ManageThematicsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+        $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
         $http.get("http://demo6872153.mockable.io/thematics")
             .success(function (data) {
                 $scope.thematics = data.thematics;
@@ -16,7 +17,7 @@ app
 
         //Go to the addThematic page
         $scope.addThematic = function () {
-            $state.go("app.admin_manage_thematic_add");
+            $state.go("app.admin_manage_thematics_add");
         }
 
         //Supprimer une thématique
@@ -29,7 +30,9 @@ app
 
     })
 
-    .controller('ManageThematicAddCtrl', function($scope, $http, $ionicPopup, $stateParams, $state){
+    .controller('ManageThematicAddCtrl', function($scope, $http, $ionicPopup, $stateParams, $state, $ionicSideMenuDelegate, $ionicNavBarDelegate){
+        $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
         $scope.category = {};
 
         $scope.createThematic = function (thematic) {

@@ -4,8 +4,8 @@ app
 
 
     .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
-        $ionicNavBarDelegate.showBackButton(false);
-        $ionicSideMenuDelegate.canDragContent(true);
+        //$ionicNavBarDelegate.showBackButton(false);
+        //$ionicSideMenuDelegate.canDragContent(true);
 
         $scope.options = $scope.options || {};
         $scope.options.hideBackButton = true;
@@ -27,8 +27,8 @@ app
         }
     })
 
-    .controller('SuggestionAddCtrl', function ($scope, $http, $ionicPopup, $stateParams, $state, $ionicSideMenuDelegate) {
-
+    .controller('SuggestionAddCtrl', function ($scope, $http, $ionicPopup, $stateParams, $state, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
         $scope.suggestion = {};
         $ionicSideMenuDelegate.canDragContent(true);
 
@@ -98,8 +98,8 @@ app
         }
     })
 
-    .controller('SuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $ionicSideMenuDelegate) {
-
+    .controller('SuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
         $ionicSideMenuDelegate.canDragContent(true);
 
         $http.get("http://demo6872153.mockable.io/suggestion")

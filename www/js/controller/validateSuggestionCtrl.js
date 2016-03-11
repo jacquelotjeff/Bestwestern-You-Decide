@@ -1,7 +1,9 @@
 'use strict';
 
 app
-    .controller('ValidateSuggestionsCtrl', function ($scope, $ionicPopup, $http) {
+    .controller('ValidateSuggestionsCtrl', function ($scope, $ionicPopup, $http, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+        $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
         //TODO replace url api to retrive suggestions to valid
         $http.get("http://demo6872153.mockable.io/suggestions")
             .success(function (data) {
@@ -15,7 +17,9 @@ app
             });
     })
 
-    .controller('ValidateOneSuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $state) {
+    .controller('ValidateOneSuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $state, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+        $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;

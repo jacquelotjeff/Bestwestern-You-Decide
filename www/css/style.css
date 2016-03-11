@@ -382,7 +382,7 @@ input:-webkit-autofill {
 }
 
 .content {
-    margin-top: 40px;
+    margin-top: 20%;
     position: relative;
 }
 
@@ -417,10 +417,11 @@ input:-webkit-autofill {
 
 .content-menu {
     top: 25px;
+    padding: 0px;
+    background: #FFF;
 }
 
-.header-menu {
-    height: 25px !important;
+ion-side-menu {
     background-color: #03135E !important;
 }
 
@@ -492,9 +493,9 @@ ion-side-menu .item {
 .menu-open .close-menu {
 	display: inline;
 	position: absolute;
-	top: 30px;
+	top: 40px;
 	font-size: 30px;
-	right:35px;
+	right:40px;
 	color: #fff;
 	z-index: 999;
 }

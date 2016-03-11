@@ -3,9 +3,9 @@
 app
     // Administration des suggestions
     // Validation des suggestions
-    .controller('ManageSuggestionsCtrl',function ($scope, $http, $ionicPopup, $state, $ionicSideMenuDelegate) {
-
+    .controller('ManageSuggestionsCtrl',function ($scope, $http, $ionicPopup, $state, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
         $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
 
         $http.get("http://demo6872153.mockable.io/suggestions-500")
             .success(function (data) {
@@ -19,9 +19,9 @@ app
             });
     })
 
-    .controller('ManageOneSuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup, $ionicSideMenuDelegate) {
-
+    .controller('ManageOneSuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
         $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
 
         $http.get("http://demo6872153.mockable.io/suggestion")
             .success(function (data) {

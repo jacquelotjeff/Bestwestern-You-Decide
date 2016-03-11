@@ -11,9 +11,7 @@ angular.module('starter.controllers', [])
     })
 
     .controller('LoginCtrl', function ($scope, userProvider, $location, $ionicPopup, $ionicSideMenuDelegate) {
-
         $ionicSideMenuDelegate.canDragContent(false);
-
         $scope.showAlertLogin = function() {
             var alertPopup = $ionicPopup.alert({
                 title: 'Best Western YOU DECIDE',
@@ -39,7 +37,9 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('AccountCtrl', function ($scope, $http, $stateParams) {
+    .controller('AccountCtrl', function ($scope, $http, $stateParams, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+        $ionicSideMenuDelegate.canDragContent(true);
+        $ionicNavBarDelegate.showBackButton(true);
         $http.get("http://demo6872153.mockable.io/user")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
