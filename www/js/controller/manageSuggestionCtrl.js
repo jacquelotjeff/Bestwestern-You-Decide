@@ -19,7 +19,7 @@ app
             });
     })
 
-    .controller('ManageOneSuggestionCtrl', function ($scope,$http, $stateParams, $ionicPopup, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+    .controller('ManageOneSuggestionCtrl', function ($scope,$http, $state, $stateParams, $ionicPopup, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
         $ionicSideMenuDelegate.canDragContent(true);
         $ionicNavBarDelegate.showBackButton(true);
 
@@ -91,4 +91,8 @@ app
             myPopup.then(function(res) {
             });
         };
+
+        $scope.backToManage = function () {
+            $state.go("app.admin_manage_suggestions");
+        }
     })

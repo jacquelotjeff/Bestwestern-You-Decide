@@ -75,4 +75,8 @@ app
             });
         };
 
+        $scope.backToSuggestions = function () {
+            $state.go("app.admin_validate_suggestions");
+        }
+
     });

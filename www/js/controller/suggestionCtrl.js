@@ -98,7 +98,7 @@ app
         }
     })
 
-    .controller('SuggestionCtrl', function ($scope, $http, $stateParams, $ionicPopup, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
+    .controller('SuggestionCtrl', function ($scope, $http, $state, $stateParams, $ionicPopup, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
         $ionicNavBarDelegate.showBackButton(true);
         $ionicSideMenuDelegate.canDragContent(true);
 
@@ -118,4 +118,8 @@ app
                 template: 'Votre vote a été pris en compte.'
             });
         };
+
+        $scope.backToList = function () {
+            $state.go("app.suggestions");
+        }
     })
