@@ -356,7 +356,7 @@ ion-item:first-child {
 .button-connect {
     border-radius: 30px;
     width: 80%;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 
 input:-webkit-autofill {
