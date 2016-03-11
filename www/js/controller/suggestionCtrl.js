@@ -4,8 +4,9 @@ app
 
 
     .controller('SuggestionsCtrl', function ($scope, $http, $ionicPopup, $state, $ionicNavBarDelegate, $ionicSideMenuDelegate) {
-        //$ionicNavBarDelegate.showBackButton(false);
-        //$ionicSideMenuDelegate.canDragContent(true);
+        
+        $ionicNavBarDelegate.showBackButton(false);
+        $ionicSideMenuDelegate.canDragContent(true);
 
         $scope.options = $scope.options || {};
         $scope.options.hideBackButton = true;

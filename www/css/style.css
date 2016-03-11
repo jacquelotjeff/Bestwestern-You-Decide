@@ -199,7 +199,7 @@ ion-item:first-child {
 .content-list-suggestion {
 
     top: 0px;
-    height: 95vh;
+    height: 85vh;
 }
 
 .theme-name {
@@ -360,7 +360,6 @@ ion-item:first-child {
 .button-connect {
     border-radius: 30px;
     width: 80%;
-    margin: 0 auto;
 }
 
 input:-webkit-autofill {
