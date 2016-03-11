@@ -339,13 +339,13 @@ ion-item:first-child {
 }
 
 .more-login {
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .more-login p {
     padding-top: 7px;
     margin-bottom: 7px !important;
-    font-size: 14px;
+    font-size: 10px;
     text-align: center;
 }
 
@@ -501,4 +501,8 @@ ion-side-menu .item {
 
 .menu-open ion-side-menus.pane.view{
 	background:#000;
+}
+
+.button-more-login{
+	margin:0 auto;
 }
