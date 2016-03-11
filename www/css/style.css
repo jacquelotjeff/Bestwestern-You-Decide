@@ -481,3 +481,24 @@ input:-webkit-autofill {
 ion-side-menu .item {
     border: none;
 }
+
+.menu-open .opaque-content {
+   opacity: 0.3;
+   transition: opacity 300ms;
+}
+.close-menu{
+	display: none;
+}
+.menu-open .close-menu {
+	display: inline;
+	position: absolute;
+	top: 30px;
+	font-size: 30px;
+	right:35px;
+	color: #fff;
+	z-index: 999;
+}
+
+.menu-open ion-side-menus.pane.view{
+	background:#000;
+}
