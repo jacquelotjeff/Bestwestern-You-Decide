@@ -40,9 +40,16 @@ angular.module('starter.controllers', [])
     })
 
     .controller('AccountCtrl', function ($scope, $http, $stateParams) {
-        $http.get("http://demo6872153.mockable.io/suggestion")
+        $http.get("http://demo6872153.mockable.io/user")
             .success(function (data) {
                 $scope.suggestion = data.suggestion;
+
+                var dateParts = data.registerDate.match(/(\d+)/g);
+                var subscribedDate = Date(dateParts[2], dateParts[1]-1, dateParts[0]);
+                var seniorityDate = Date.now() - subscribedDate;
+                var ageDate = new Date(seniorityDate); // miliseconds from epoch
+                $scope.user.seniority = Math.abs(ageDate.getUTCFullYear() - 1970);
+                $scope.user = data;
             })
             .error(function (data) {
                 var alertPopup = $ionicPopup.alert({
