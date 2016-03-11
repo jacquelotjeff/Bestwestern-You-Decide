@@ -167,6 +167,10 @@ ion-item:first-child {
     border-top: 0px;
 }
 
+.card:focus {
+  background-color: gray;
+}
+
 .detail {
     width: 30%;
     height: 30px;
