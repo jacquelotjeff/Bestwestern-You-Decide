@@ -378,7 +378,12 @@ input:-webkit-autofill {
 .bar .title .title-image {
     height: 55px;
     width: 165px;
-    margin-top: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+.platform-android .bar .title {
+    right: inherit !important;
 }
 
 .content {
