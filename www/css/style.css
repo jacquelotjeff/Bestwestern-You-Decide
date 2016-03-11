@@ -167,6 +167,10 @@ ion-item:first-child {
     border-top: 0px;
 }
 
+.card:focus {
+  background-color: gray;
+}
+
 .detail {
     width: 30%;
     height: 30px;
@@ -356,7 +360,6 @@ ion-item:first-child {
 .button-connect {
     border-radius: 30px;
     width: 80%;
-    margin: 0 auto;
 }
 
 input:-webkit-autofill {
@@ -378,7 +381,12 @@ input:-webkit-autofill {
 .bar .title .title-image {
     height: 55px;
     width: 165px;
-    margin-top: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+.platform-android .bar .title {
+    right: inherit !important;
 }
 
 .content {
